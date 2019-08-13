@@ -4,7 +4,7 @@ import Panel from '../components/layouts/panel';
 
 const About = () => (
   <HomePage>
-    <Panel css={{ backgroundColor: 'purple', color: 'white' }}>
+    <Panel css={{ backgroundColor: 'green', color: 'white' }}>
       <h1>About</h1>
     </Panel>
   </HomePage>

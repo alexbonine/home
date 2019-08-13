@@ -4,7 +4,7 @@ import Panel from '../components/layouts/panel';
 
 const Contact = () => (
   <HomePage>
-    <Panel css={{ backgroundColor: 'purple', color: 'white' }}>
+    <Panel css={{ backgroundColor: 'blue', color: 'white' }}>
       <h1>Contact</h1>
     </Panel>
   </HomePage>
