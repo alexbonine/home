@@ -1,6 +1,9 @@
 import { css } from '@emotion/core';
+import emotionReset from 'emotion-reset';
 
 export default css`
+  ${emotionReset}
+
   * {
     box-sizing: border-box;
   }
@@ -18,6 +21,10 @@ export default css`
 
   li {
     display: inline-flex;
+  }
+
+  a {
+    text-decoration: none;
   }
 `;
 

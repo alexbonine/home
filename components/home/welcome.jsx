@@ -4,7 +4,9 @@ import { css, keyframes } from '@emotion/core';
 import Colors from '../../styles/colors';
 import { GlitchConstants } from '../../styles/constants/animations';
 import GlitchImage from './glitchImage';
-import Panel from '../layouts/panel';
+// import Panel from '../layouts/panel';
+import panel from '../../styles/components/panel';
+import { flexCenterAll } from '../../styles/flex';
 
 const GlitchText = keyframes`
   0% {
@@ -57,15 +59,16 @@ const TitleContainer = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 12vw;
+  font-size: 10em;
   font-family: 'Playfair Display', serif;
+  font-weight: bold;
   animation-delay: calc(${GlitchConstants.delayAnim} + ${GlitchConstants.timeAnim} * 0.2);
   color: ${Colors.textLight};
+  margin-top: 0.83em;
 `;
 
 const SubTitle = styled.p`
   font-family: 'IM Fell English', serif;
-  margin-top: -10vw;
   font-size: 1.5em;
   max-width: 600px;
   font-weight: 400;
@@ -82,7 +85,7 @@ const glitchText = css`
 
 const Welcome = () => {
   return (
-    <Panel className="loaded">
+    <div className="loaded" css={[panel, flexCenterAll]}>
       <GlitchImage />
       <TitleContainer>
         <Title css={glitchText}>Alex Bonine</Title>
@@ -93,7 +96,7 @@ const Welcome = () => {
           tiny start-up.
         </SubTitle>
       </TitleContainer>
-    </Panel>
+    </div>
   );
 };
 

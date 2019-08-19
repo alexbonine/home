@@ -1,12 +1,14 @@
 import React from 'react';
+import { css } from '@emotion/core';
 import HomePage from '../layouts/home';
-import Panel from '../components/layouts/panel';
+import panel from '../styles/components/panel';
+import { flexCenterAll } from '../styles/flex';
 
 const About = () => (
   <HomePage>
-    <Panel css={{ backgroundColor: 'green', color: 'white' }}>
+    <div css={css({ backgroundColor: 'green', color: 'white' }, [panel, flexCenterAll])}>
       <h1>About</h1>
-    </Panel>
+    </div>
   </HomePage>
 );
 
