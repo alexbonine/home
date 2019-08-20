@@ -1,5 +1,6 @@
 import { css } from '@emotion/core';
 import emotionReset from 'emotion-reset';
+import Colors from './colors';
 
 export default css`
   ${emotionReset}
@@ -11,6 +12,8 @@ export default css`
   body {
     margin: 0;
     padding: 0;
+    font-size: 16px;
+    background: ${Colors.green};
   }
 
   ul {
@@ -25,6 +28,22 @@ export default css`
 
   a {
     text-decoration: none;
+    display: inline-block;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  div,
+  p,
+  a {
+    font-family: 'Playfair Display', serif;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
   }
 `;
 
