@@ -120,17 +120,27 @@ class CustomApp extends App {
           {`
             .page-transition-enter {
               opacity: 0;
+              position: relative;
             }
             .page-transition-enter-active {
               opacity: 1;
               transition: opacity 300ms;
+              position: relative;
+            }
+            .page-transition-enter-done {
+              position: relative;
             }
             .page-transition-exit {
               opacity: 1;
+              position: relative;
             }
             .page-transition-exit-active {
               opacity: 0;
               transition: opacity 300ms;
+              position: relative;
+            }
+            .page-transition-exit-done {
+              position: relative;
             }
           `}
         </style>

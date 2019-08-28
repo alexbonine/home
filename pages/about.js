@@ -78,7 +78,7 @@ const About = () => (
       <AboutContainer>
         <PictureTextContainer>
           <PictureSubcontainer>
-            <img src="/static/alex-bonine-the-office.jpg" alt="Alex at Michael Scott's desk" />
+            <img src="/static/img/alex-bonine-the-office.jpg" alt="Alex at Michael Scott's desk" />
           </PictureSubcontainer>
           <AboutSubcontainer>
             <Text>
