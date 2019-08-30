@@ -7,8 +7,8 @@ const Image = styled.div`
   background: ${({ image }) => `url(${image}) center center/cover`};
   max-width: 100%;
   transition: opacity 0.5s;
-  height: 300px;
-  width: 390px;
+  height: 250px;
+  width: 400px;
 `;
 
 const Text = styled.div`
@@ -47,8 +47,17 @@ const Link = styled.a`
 `;
 
 const Item = styled.div`
-  display: inline-block;
   position: relative;
+  /* background-size: cover;
+  background-position: center center; */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* text-transform: uppercase; */
+  /* font-size: 10px; */
+  /* line-height: 10px; */
+  /* border-radius: 4px; */
+  /* box-shadow: 0px 10px 50px -10px rgba(0, 0, 0, 0.2); */
 
   &:hover {
     cursor: pointer;
