@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import Colors from '../../styles/colors';
+import HomepageStyles from '../../styles/components/homepage';
 
 const ContactContainer = styled.div`
   height: 80vh;
@@ -23,16 +24,16 @@ const ContactSubcontainer = styled.div`
 
 const Title = styled.h1`
   font-size: 2.75em;
-  color: ${Colors.white};
+  color: ${HomepageStyles.textMain};
 `;
 
 const SubTitle = styled.h2`
   font-size: 2.25em;
-  color: ${Colors.white};
+  color: ${HomepageStyles.textMain};
 `;
 
 const ContactLink = styled.a`
-  color: ${Colors.white};
+  color: ${HomepageStyles.textMain};
   font-size: 2em;
   display: block;
 
@@ -64,7 +65,7 @@ const Icon = styled.a`
     display: block;
 
     path {
-      fill: ${Colors.white};
+      fill: ${HomepageStyles.textMain};
       -moz-transition: all 450ms ease;
       -webkit-transition: all 450ms ease;
       -o-transition: all 450ms ease;
@@ -76,19 +77,19 @@ const Icon = styled.a`
 
 const IconLinkedin = styled(Icon)`
   &:hover svg path {
-    fill: #4875b4;
+    fill: ${Colors.external.linkedin};
   }
 `;
 
 const IconFacebook = styled(Icon)`
   &:hover svg path {
-    fill: #3b5998;
+    fill: ${Colors.external.facebook};
   }
 `;
 
 const IconGithub = styled(Icon)`
   &:hover svg path {
-    fill: #55acee;
+    fill: ${Colors.external.github};
   }
 `;
 

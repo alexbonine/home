@@ -1,14 +1,14 @@
 import React from 'react';
 import { css } from '@emotion/core';
 import HomePage from '../layouts/home';
-import panel from '../styles/components/panel';
-import { flexCenterAll } from '../styles/flex';
+import Panel from '../components/layouts/panel';
+import colors from '../styles/colors';
 
 const Portfolio = () => (
   <HomePage>
-    <div css={css({ backgroundColor: 'purple', color: 'white' }, [panel, flexCenterAll])}>
-      <h1>Portfolio</h1>
-    </div>
+    <Panel centerHorizontal centerVertical backgroundColor={colors.purple}>
+      <h1 css={css({ color: 'white' })}>Portfolio</h1>
+    </Panel>
   </HomePage>
 );
 

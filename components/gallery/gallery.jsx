@@ -95,7 +95,7 @@ const Gallery = ({ all, headers, items }) => {
     from: ({ xy, width, height }) => ({
       xy,
       width,
-      height,
+      height: 0,
       opacity: 0,
     }),
     enter: ({ xy, width, height }) => ({
@@ -114,15 +114,15 @@ const Gallery = ({ all, headers, items }) => {
     <GalleryContainer>
       <GalleryHeader all={all} items={headers} onSelect={setSelected} selected={selected} />
       <ItemContainer ref={ref} style={{ height: Math.max(...heights) }}>
-        {transitions.map(({ item: {
- image, label, link, subtitle 
-}, props: { xy, ...rest }, key }) => (
-          <AnimatedDiv
-                    key={key}
-                    style={{ transform: xy.interpolate((x, y) => `translate3d(${x}px,${y}px,0)`), ...rest }}
+        {transitions.map(({
+ item: { image, label, link, subtitle         }, props: { xy, ...rest }, key 
+}) => (
+  <AnimatedDiv
+            key={key}
+            style={{ transform: xy.interpolate((x, y) => `translate3d(${x}px,${y}px,0)`), ...rest }}
           >
-                    <GalleryItem image={image} label={label} link={link} subtitle={subtitle} />
-                  </AnimatedDiv>
+            <GalleryItem image={image} label={label} link={link} subtitle={subtitle} />
+          </AnimatedDiv>
         ))}
       </ItemContainer>
     </GalleryContainer>

@@ -23,7 +23,7 @@ const Text = styled.div`
 `;
 
 const Title = styled.div`
-  color: ${Colors.blue};
+  color: ${Colors.green};
   font-size: 2em;
   font-weight: 600;
 `;
@@ -61,7 +61,7 @@ const Item = styled.div`
 
   &:hover {
     cursor: pointer;
-    background: ${Colors.white};
+    background: ${Colors.backgroundNone};
 
     ${Image} {
       opacity: 0;

@@ -1,13 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
 import HomePage from '../layouts/home';
-import panel from '../styles/components/panel';
-import { flexCenterAll /* flexCenterColumn */ } from '../styles/flex';
 import Colors from '../styles/colors';
+import Panel from '../components/layouts/panel';
 
 const AboutContainer = styled.div`
-  /* height: 80vh; */
   width: 80vw;
   overflow: auto;
   display: flex;
@@ -15,11 +12,6 @@ const AboutContainer = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
-// const Title = styled.h1`
-//   font-size: 4em;
-//   margin-bottom: 20px;
-// `;
 
 const PictureTextContainer = styled.div`
   display: flex;
@@ -36,13 +28,13 @@ const PictureSubcontainer = styled.div`
 const AboutSubcontainer = styled.div`
   margin: 0 auto;
   display: flex;
-  /* justify-content: center; */
   flex-direction: column;
   height: 100%;
 `;
 
 const Text = styled.p`
   font-size: 1.4em;
+  color: ${Colors.textLight};
 `;
 
 const UnderDividerText = styled(Text)`
@@ -58,7 +50,7 @@ const Divider = styled.div`
 `;
 
 const AboutLink = styled.a`
-  color: ${Colors.white};
+  color: ${Colors.gray};
 
   &:hover {
     opacity: 0.8;
@@ -68,13 +60,7 @@ const AboutLink = styled.a`
 
 const About = () => (
   <HomePage>
-    <div
-      css={css({ backgroundColor: Colors.green, color: Colors.white /* , paddingTop: '60px' */ }, [
-        panel,
-        flexCenterAll,
-      ])}
-    >
-      {/* <Title>About</Title> */}
+    <Panel centerHorizontal centerVertical>
       <AboutContainer>
         <PictureTextContainer>
           <PictureSubcontainer>
@@ -119,7 +105,7 @@ const About = () => (
           </AboutSubcontainer>
         </PictureTextContainer>
       </AboutContainer>
-    </div>
+    </Panel>
   </HomePage>
 );
 

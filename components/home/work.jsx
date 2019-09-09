@@ -1,41 +1,19 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import styled from '@emotion/styled';
-// import { css } from '@emotion/core';
-import Colors from '../../styles/colors';
-import panel from '../../styles/components/panel';
-// import Gallery from '../gallery/gallery';
-import { flexCenterColumn } from '../../styles/flex';
+import HomepageStyles from '../../styles/components/homepage';
+import Panel from '../layouts/panel';
 
 const Gallery = dynamic(
   () => import('../gallery/gallery'),
   { ssr: false },
 );
 
-const PanelContainer = styled.div`
-  padding: 10vh 0 0 0;
-  position: relative;
-  background: ${Colors.purple};
-`;
-
 const WorkContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1170px;
-`;
-
-const Title = styled.h3`
-  font-size: 4em;
-  font-family: 'Playfair Display', serif;
-  color: ${Colors.textLight};
-  margin-bottom: 16px;
-`;
-
-const Text = styled.p`
-  font-size: 2em;
-  font-family: 'Playfair Display', serif;
-  color: ${Colors.textLight};
+  max-width: 1200px;
 `;
 
 const GalleryItemIds = {
@@ -187,12 +165,11 @@ const galleryItems = [
 
 const Work = () => {
   return (
-    <PanelContainer css={[panel, flexCenterColumn]}>
-      <Title>Work</Title>
+    <Panel title="Work" centerHorizontal backgroundColor={HomepageStyles.backgroundColorAlt} paddingNavbar>
       <WorkContainer>
         <Gallery all headers={galleryHeaders} items={galleryItems} />
       </WorkContainer>
-    </PanelContainer>
+    </Panel>
   );
 };
 

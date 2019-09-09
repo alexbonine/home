@@ -1,21 +1,12 @@
 import React from 'react';
-import styled from '@emotion/styled';
 import ContactLinks from '../contact/contactLinks';
-import Colors from '../../styles/colors';
-import panel from '../../styles/components/panel';
-import { flexCenterColumn } from '../../styles/flex';
-
-const PanelContainer = styled.div`
-  padding: 10vh 0 0 0;
-  position: relative;
-  background: ${Colors.blue};
-`;
+import Panel from '../layouts/panel';
 
 const Contact = () => {
   return (
-    <PanelContainer css={[panel, flexCenterColumn]}>
+    <Panel centerHorizontal paddingNavbar>
       <ContactLinks subtitle="Say hello!" title="Thanks for making it this far." />
-    </PanelContainer>
+    </Panel>
   );
 };
 

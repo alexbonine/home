@@ -13,7 +13,7 @@ const Item = styled.div`
 `;
 
 const Label = styled.h5`
-  color: ${({ selected }) => (selected ? Colors.blue : Colors.white)};
+  color: ${({ selected }) => (selected ? Colors.gray : Colors.white)};
   font-family: 'IM Fell English', serif;
   font-size: 1.5em;
 
@@ -23,9 +23,7 @@ const Label = styled.h5`
   }
 `;
 
-const GalleryHeaderItem = ({
- label, onSelect, value, selected 
-}) => {
+const GalleryHeaderItem = ({ label, onSelect, value, selected }) => {
   const onClick = useCallback(() => {
     onSelect(value);
   }, []);

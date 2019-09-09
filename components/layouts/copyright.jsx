@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Colors from '../../styles/colors';
+import HomepageStyles from '../../styles/components/homepage';
 
 const CopyrightContainer = styled.div`
   position: absolute;
@@ -12,7 +12,7 @@ const CopyrightContainer = styled.div`
 `;
 
 const CopyrightText = styled.p`
-  color: ${Colors.white};
+  color: ${HomepageStyles.textMain};
   /* text-align: center; */
 `;
 

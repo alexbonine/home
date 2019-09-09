@@ -1,25 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { css } from '@emotion/core';
-import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import Colors from '../../styles/colors';
-
-const Items = {
-  portfolio: 'Portfolio',
-  about: 'About',
-  contact: 'Contact',
-};
 
 const HeaderElement = styled.header`
   font-family: 'Playfair Display', serif;
-  /* background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) -10%, rgba(0, 0, 0, 0) 100%); */
-  text-align: center;
   width: 100%;
   font-size: 1.25rem;
-  position: fixed;
-  z-index: 1;
+  position: absolute;
 `;
 
 const NavContainer = styled.nav`
@@ -28,13 +17,18 @@ const NavContainer = styled.nav`
   margin: 16px;
 `;
 
+const NavList = styled.ul`
+  position: fixed;
+  z-index: 1;
+  right: ${({ right }) => right && 0};
+`;
+
 const ATag = styled.a`
   position: relative;
   padding-bottom: 8px;
   margin: 0 16px;
   color: white;
   text-decoration: none;
-  /* text-transform: uppercase; */
 
   &::after {
     content: '';
@@ -65,20 +59,19 @@ const Selected = css`
 `;
 
 const Header = () => {
-  // const [selected, setSelected] = useState();
   const router = useRouter();
 
   return (
     <HeaderElement>
       <NavContainer>
-        <ul>
+        <NavList>
           <li>
             <Link href="/">
               <ATag>AB</ATag>
             </Link>
           </li>
-        </ul>
-        <ul>
+        </NavList>
+        <NavList right>
           <li>
             <Link href="/portfolio">
               <ATag css={router.pathname === '/portfolio' ? Selected : ''}>Portfolio</ATag>
@@ -94,18 +87,14 @@ const Header = () => {
               <ATag css={router.pathname === '/contact' ? Selected : ''}>Contact</ATag>
             </Link>
           </li>
-        </ul>
+        </NavList>
       </NavContainer>
     </HeaderElement>
   );
 };
 
-Header.propTypes = {
-  // children: PropTypes.node,
-};
+Header.propTypes = {};
 
-Header.defaultProps = {
-  // children: null,
-};
+Header.defaultProps = {};
 
 export default Header;
