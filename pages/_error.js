@@ -22,7 +22,7 @@ class Error extends React.Component {
     if (statusCode === 404) {
       return {
         title: 'Page Not Found',
-        text: 'I\'m sorry but the page you are looking for doesn\'t seem to exist.',
+        text: "I'm sorry but the page you are looking for doesn't seem to exist.",
       };
     } else if (statusCode === 500) {
       return {
@@ -35,7 +35,7 @@ class Error extends React.Component {
     return {
       error: `Status code was ${statusCode}`,
       title: 'Client Error',
-      text: 'Something  I did broke the frontend. Whoops',
+      text: 'Something  I did broke the front-end. Whoops',
     };
   }
 
@@ -64,7 +64,7 @@ Error.defaultProps = {
 
 Error.meta = {
   title: 'Error',
-  description: 'Alex Bonine doesn\'t make mistakes so...',
+  description: "Alex Bonine doesn't make mistakes so...",
 };
 
 export default Error;

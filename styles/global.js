@@ -29,6 +29,11 @@ export default css`
   a {
     text-decoration: none;
     display: inline-block;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.7;
+    }
   }
 
   h1,

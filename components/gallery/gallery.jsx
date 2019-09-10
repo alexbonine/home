@@ -8,13 +8,13 @@ import GalleryItem from './galleryItem';
 import GalleryHeader, { All } from './galleryHeader';
 import useMeasure from '../../hooks/useMeasure';
 import useMedia from '../../hooks/useMedia';
-// import { flexCenterColumn } from '../../styles/flex';
+import { App } from '../../styles/constants/app';
 
 const GalleryContainer = styled.div``;
 
 const ItemContainer = styled.div`
   margin: 20px 0;
-  max-width: 1200px;
+  max-width: ${App.maxWidth};
   width: 100%;
   height: 100%;
   position: relative;
@@ -114,15 +114,13 @@ const Gallery = ({ all, headers, items }) => {
     <GalleryContainer>
       <GalleryHeader all={all} items={headers} onSelect={setSelected} selected={selected} />
       <ItemContainer ref={ref} style={{ height: Math.max(...heights) }}>
-        {transitions.map(({
- item: { image, label, link, subtitle         }, props: { xy, ...rest }, key 
-}) => (
-  <AnimatedDiv
-            key={key}
-            style={{ transform: xy.interpolate((x, y) => `translate3d(${x}px,${y}px,0)`), ...rest }}
-          >
-            <GalleryItem image={image} label={label} link={link} subtitle={subtitle} />
-          </AnimatedDiv>
+        {transitions.map(({ item: { image, label, link, subtitle }, props: { xy, ...rest }, key         }) => (
+          <AnimatedDiv
+    key={key}
+    style={{ transform: xy.interpolate((x, y) => `translate3d(${x}px,${y}px,0)`), ...rest }}
+  >
+    <GalleryItem image={image} label={label} link={link} subtitle={subtitle} />
+  </AnimatedDiv>
         ))}
       </ItemContainer>
     </GalleryContainer>

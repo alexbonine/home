@@ -52,7 +52,6 @@ const Icon = styled.a`
   font-size: 0.9em;
   text-align: center;
   vertical-align: middle;
-  cursor: pointer;
   -moz-transition: all 350ms ease;
   -webkit-transition: all 350ms ease;
   -o-transition: all 350ms ease;

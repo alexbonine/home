@@ -44,8 +44,6 @@ const ATag = styled.a`
   }
 
   &:hover {
-    cursor: pointer;
-
     &::after {
       transform: translateX(-50%) scaleX(1);
     }
