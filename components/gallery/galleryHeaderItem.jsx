@@ -19,12 +19,11 @@ const Label = styled.h5`
 
   &:hover {
     opacity: 0.7;
+    cursor: pointer;
   }
 `;
 
-const GalleryHeaderItem = ({
- label, onSelect, value, selected 
-}) => {
+const GalleryHeaderItem = ({ label, onSelect, value, selected }) => {
   const onClick = useCallback(() => {
     onSelect(value);
   }, []);

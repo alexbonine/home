@@ -1,0 +1,190 @@
+{
+  "name": "skills",
+  "children": [
+    {
+      "name": "Front-end",
+      "children": [
+        {
+          "name": "Frameworks",
+          "children": [
+            {
+              "name": "React",
+              "value": 1000,
+              "proficiency": [0, 0, 0, 0, 0, 0, 0, 0, 30, 60, 90, 90, 70]
+            },
+            {
+              "name": "Vue",
+              "value": 400,
+              "proficiency": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 30, 60]
+            },
+            {
+              "name": "Backbone JS",
+              "value": 50,
+              "proficiency": [0, 0, 0, 0, 0, 20, 30, 40, 50, 50, 20, 10, 10]
+            },
+            {
+              "name": "Handlebars",
+              "value": 25,
+              "proficiency": [0, 0, 0, 0, 0, 10, 20, 20, 20, 10, 5, 0, 0]
+            },
+            {
+              "name": "Vanilla JS",
+              "value": 100,
+              "proficiency": [0, 0, 0, 0, 10, 20, 40, 60, 70, 70, 90, 70, 70]
+            }
+          ]
+        },
+        {
+          "name": "Architecture",
+          "value": 500,
+          "proficiency": [0, 0, 0, 0, 0, 20, 30, 35, 40, 60, 80, 85, 90]
+        },
+        {
+          "name": "Redux",
+          "value": 500,
+          "proficiency": [0, 0, 0, 0, 0, 0, 0, 0, 20, 50, 70, 60, 50]
+        },
+        {
+          "name": "Webpack",
+          "value": 400,
+          "proficiency": [0, 0, 0, 0, 0, 0, 0, 0, 20, 40, 40, 40, 40]
+        },
+        {
+          "name": "D3.js",
+          "value": 40,
+          "proficiency": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 10]
+        },
+        {
+          "name": "jQuery",
+          "value": 100,
+          "proficiency": [0, 0, 0, 0, 10, 30, 50, 40, 30, 20, 10, 10, 10]
+        },
+        {
+          "name": "GraphQL",
+          "value": 25,
+          "proficiency": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5]
+        }
+      ]
+    },
+    {
+      "name": "Back-end",
+      "children": [
+        {
+          "name": "Node",
+          "children": [
+            {
+              "name": "Next",
+              "value": 200,
+              "proficiency": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 20]
+            },
+            {
+              "name": "Nuxt",
+              "value": 700,
+              "proficiency": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 30, 60]
+            },
+            {
+              "name": "Express",
+              "value": 1000,
+              "proficiency": [0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 20, 40, 60]
+            },
+            {
+              "name": "GraphQL",
+              "value": 50,
+              "proficiency": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5]
+            }
+          ]
+        },
+        {
+          "name": "MySql",
+          "value": 50,
+          "proficiency": [0, 0, 0, 0, 0, 15, 15, 15, 10, 10, 10, 15, 20]
+        },
+        {
+          "name": "C#.NET",
+          "value": 40,
+          "proficiency": [0, 0, 0, 0, 10, 30, 40, 40, 30, 0, 0, 0, 0]
+        },
+        {
+          "name": "Google Cloud",
+          "value": 10,
+          "proficiency": [0, 0, 0, 0, 0, 0, 0, 0, 20, 10, 0, 0, 0]
+        }
+      ]
+    },
+    {
+      "name": "Languages",
+      "children": [
+        {
+          "name": "JavaScript",
+          "value": 1500,
+          "proficiency": [0, 0, 0, 0, 0, 20, 40, 50, 60, 80, 85, 90, 90]
+        },
+        {
+          "name": "HTML",
+          "value": 900,
+          "proficiency": [0, 0, 0, 0, 5, 30, 40, 50, 60, 75, 80, 80, 80]
+        },
+        {
+          "name": "CSS",
+          "value": 800,
+          "proficiency": [0, 0, 0, 0, 5, 30, 40, 50, 60, 75, 80, 80, 80]
+        },
+        {
+          "name": "Sass",
+          "value": 700,
+          "proficiency": [0, 0, 0, 0, 0, 0, 0, 0, 5, 20, 30, 50, 50]
+        },
+        {
+          "name": "C#",
+          "value": 50,
+          "proficiency": [0, 0, 0, 0, 10, 30, 40, 40, 30, 0, 0, 0, 0]
+        },
+        {
+          "name": "C++",
+          "value": 20,
+          "proficiency": [40, 40, 50, 50, 25, 0, 0, 0, 0, 0, 0, 0, 0]
+        },
+        {
+          "name": "Python",
+          "value": 100,
+          "proficiency": [0, 0, 0, 15, 30, 15, 0, 0, 0, 0, 0, 0, 0]
+        }
+      ]
+    },
+    {
+      "name": "Other",
+      "children": [
+        {
+          "name": "Project Management",
+          "value": 200,
+          "proficiency": [0, 10, 20, 35, 50, 10, 10, 10, 10, 10, 20, 30, 35]
+        },
+        {
+          "name": "Management",
+          "value": 25,
+          "proficiency": [0, 0, 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 0]
+        },
+        {
+          "name": "Mentoring",
+          "value": 325,
+          "proficiency": [0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 20, 10, 10]
+        },
+        {
+          "name": "Dev Tooling",
+          "value": 500,
+          "proficiency": [0, 0, 0, 0, 0, 10, 10, 10, 40, 50, 60, 60, 60]
+        },
+        {
+          "name": "Coding Standards",
+          "value": 200,
+          "proficiency": [0, 0, 0, 0, 0, 10, 10, 10, 50, 70, 70, 80, 80]
+        },
+        {
+          "name": "Server Management",
+          "value": 125,
+          "proficiency": [0, 0, 0, 0, 0, 0, 0, 0, 15, 15, 10, 15, 20]
+        }
+      ]
+    }
+  ]
+}
