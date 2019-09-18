@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import HomePage from '../layouts/home';
 import Colors from '../styles/colors';
-import { App } from '../styles/constants/app';
+import App from '../styles/constants/app';
 import Leaplife from '../components/portfolio/leaplife';
 import Marketo from '../components/portfolio/marketo';
 import Toutapp from '../components/portfolio/toutapp';
@@ -13,7 +13,7 @@ import RockwellCollins from '../components/portfolio/rockwellCollins';
 
 const PortfolioContainer = styled.div`
   max-width: ${App.maxWidth};
-  padding: 6vh 0;
+  padding: ${App.headerHeight} 0;
   margin: 0 auto;
   height: 100vh;
   display: flex;

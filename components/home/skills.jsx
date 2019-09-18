@@ -4,7 +4,7 @@ import Panel from '../layouts/panel';
 import Sunburst from '../charts/sunburst';
 import Line from '../charts/line';
 import data from '../../utils/skillsData.json';
-import { App } from '../../styles/constants/app';
+import App from '../../styles/constants/app';
 // import HomepageStyles from '../../styles/components/homepage';
 
 const SkillsContainer = styled.div`

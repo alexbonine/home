@@ -23,18 +23,19 @@ const ContactSubcontainer = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 2.75em;
+  font-size: 44px;
   color: ${HomepageStyles.textMain};
+  text-align: center;
 `;
 
 const SubTitle = styled.h2`
-  font-size: 2.25em;
+  font-size: 36px;
   color: ${HomepageStyles.textMain};
 `;
 
 const ContactLink = styled.a`
   color: ${HomepageStyles.textMain};
-  font-size: 2em;
+  font-size: 32px;
   display: block;
 
   &:hover {

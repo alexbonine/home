@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import styled from '@emotion/styled';
 import HomepageStyles from '../../styles/components/homepage';
 import Panel from '../layouts/panel';
-import { App } from '../../styles/constants/app';
+import App from '../../styles/constants/app';
 
 const Gallery = dynamic(
   () => import('../gallery/gallery'),

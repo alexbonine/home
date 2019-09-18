@@ -1,6 +1,7 @@
 import { css } from '@emotion/core';
 import emotionReset from 'emotion-reset';
 import Colors from './colors';
+import { mqMobile } from './grid';
 
 export default css`
   ${emotionReset}
@@ -46,16 +47,32 @@ export default css`
     font-family: 'Playfair Display', serif;
   }
 
+  .screen-width,
+  img.screen-width {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+    max-width: initial;
+  }
+
+  ${mqMobile} {
+    .screen-width-mobile,
+    img.screen-width-mobile {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw !important;
+      margin-right: -50vw !important;
+      max-width: initial;
+    }
+  }
+
   img {
     max-width: 100%;
     height: auto;
   }
 `;
-
-/*
-  body {
-	font-family: 'Saira Extra Condensed', sans-serif;
-	letter-spacing: 1px;
-	-webkit-font-smoothing: antialiased;
-     -moz-osx-font-smoothing: grayscale;
-} */

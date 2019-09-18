@@ -8,7 +8,7 @@ import GalleryItem from './galleryItem';
 import GalleryHeader, { All } from './galleryHeader';
 import useMeasure from '../../hooks/useMeasure';
 import useMedia from '../../hooks/useMedia';
-import { App } from '../../styles/constants/app';
+import App from '../../styles/constants/app';
 
 const GalleryContainer = styled.div``;
 

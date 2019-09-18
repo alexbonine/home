@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { css, keyframes } from '@emotion/core';
 import Colors from '../../styles/colors';
+import App from '../../styles/constants/app';
 import { GlitchConstants } from '../../styles/constants/animations';
 import GlitchImage from './glitchImage';
 // import Panel from '../layouts/panel';
@@ -54,7 +55,7 @@ const GlitchText = keyframes`
 `;
 
 const TitleContainer = styled.div`
-  margin: 10vh 0 0 0;
+  margin: ${App.headerHeight} 0 0 0;
   position: relative;
 `;
 
