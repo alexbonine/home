@@ -50,9 +50,7 @@ const PanelTitle = styled.h3`
   margin-bottom: ${App.full};
 `;
 
-const Panel = ({
- backgroundColor, centerHorizontal, centerVertical, children, gutters, paddingNavbar, title 
-}) => (
+const Panel = ({ backgroundColor, centerHorizontal, centerVertical, children, gutters, paddingNavbar, title }) => (
   <PanelContainer
     backgroundColor={backgroundColor}
     centerHorizontal={centerHorizontal}
@@ -79,7 +77,7 @@ Panel.defaultProps = {
   backgroundColor: Colors.backgroundDark,
   centerHorizontal: false,
   centerVertical: false,
-  gutters: true, // temp ?
+  gutters: false,
   paddingNavbar: false,
   title: '',
 };

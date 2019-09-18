@@ -166,7 +166,7 @@ const galleryItems = [
 
 const Work = () => {
   return (
-    <Panel title="Work" centerHorizontal backgroundColor={HomepageStyles.backgroundColorAlt} paddingNavbar>
+    <Panel gutters title="Work" centerHorizontal backgroundColor={HomepageStyles.backgroundColorAlt} paddingNavbar>
       <WorkContainer>
         <Gallery all headers={galleryHeaders} items={galleryItems} />
       </WorkContainer>

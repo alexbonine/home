@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import Colors from '../../styles/colors';
+import { mqTablet } from '../../styles/screenSize';
+import App from '../../styles/constants/app';
 
 const Container = styled.li`
   display: flex;
@@ -9,14 +11,18 @@ const Container = styled.li`
 `;
 
 const DateContainer = styled.div`
-  width: 200px;
+  width: 120px;
   text-align: right;
-  padding: ${({ isFirst }) => (isFirst ? '16px 16px 0 0' : '32px 16px 0 0')};
+  padding: ${({ isFirst }) => (isFirst ? `${App.full} ${App.full} 0 0` : `${App.double} ${App.full} 0 0`)};
   border-right: 1px solid ${Colors.white};
-  font-size: 1em;
-  line-height: 1.5em;
+  font-size: 16px;
+  line-height: 24px;
   color: ${Colors.textLight};
   position: relative;
+
+  ${mqTablet} {
+    width: 200px;
+  }
 `;
 
 const DateTextContainer = styled.div`
@@ -36,9 +42,9 @@ const DateDot = styled.div`
 `;
 
 const ChildContainer = styled.div`
-  margin-left: 16px;
+  margin-left: ${App.full};
   /* padding-bottom: 32px; */
-  padding: ${({ isFirst, isLast }) => `${isFirst ? '16px' : '32px'} 16px ${isLast ? '16px' : '32px'} 0`};
+  padding: ${({ isFirst, isLast }) => `${isFirst ? App.full : App.double} 0 ${isLast ? App.full : App.double} 0`};
   border-bottom: ${({ isLast }) => (isLast ? undefined : `1px solid ${Colors.white}`)};
   color: ${Colors.textLight};
   width: 100%;

@@ -97,7 +97,7 @@ const Skills = () => {
   // }
 
   return (
-    <Panel title="Skills & Tech" centerHorizontal paddingNavbar>
+    <Panel gutters title="Skills & Tech" centerHorizontal paddingNavbar>
       <SkillsContainer>
         <SkillsWrapper ref={ref}>
           <Sunburst css={[flexShrinkNone]} data={data} setBreadcrumbs={setBreadcrumbs} />

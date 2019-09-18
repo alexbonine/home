@@ -7,8 +7,9 @@ import { mqDesktop, mqTablet } from '../styles/screenSize';
 import Panel from '../components/layouts/panel';
 
 const AboutContainer = styled.div`
+  max-width: ${App.maxWidth};
+
   ${mqDesktop} {
-    overflow: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,7 +55,7 @@ const AboutLink = styled.a`
 `;
 
 const About = () => (
-  <HomePage>
+  <HomePage gutters>
     <Panel centerHorizontal centerVertical paddingNavbar={App.tablet}>
       <AboutContainer>
         <div>

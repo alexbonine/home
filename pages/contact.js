@@ -4,7 +4,7 @@ import ContactLinks from '../components/contact/contactLinks';
 import Panel from '../components/layouts/panel';
 
 const Contact = () => (
-  <HomePage>
+  <HomePage gutters>
     <Panel centerHorizontal centerVertical>
       <ContactLinks title="Say hello!" />
     </Panel>

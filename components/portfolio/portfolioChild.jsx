@@ -2,19 +2,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import Colors from '../../styles/colors';
+import App from '../../styles/constants/app';
+import { mqDesktop } from '../../styles/screenSize';
 import PortfolioImages, { PortfolioImageShape } from './portfolioImages';
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
+
+  ${mqDesktop} {
+    flex-direction: row;
+  }
 `;
 
 const TextContainer = styled.div`
   flex: 1 1 auto;
-  margin-right: 16px;
+  margin-bottom: ${App.full};
+
+  ${mqDesktop} {
+    margin-bottom: 0;
+    margin-right: ${App.full};
+  }
 `;
 
 const Title = styled.h4`
-  font-size: 1.5em;
+  font-size: 24px;
   color: ${Colors.textLight};
   font-weight: 600;
 `;
@@ -22,25 +34,25 @@ const Title = styled.h4`
 const TitleLink = Title.withComponent('a');
 
 const Subtitle = styled.h5`
-  font-size: 1.2em;
+  font-size: 20px;
   font-style: italic;
-  padding-top: 8px;
-  font-weight: 500;
+  padding-top: ${App.half};
+  /* font-weight: 500; */
 `;
 
 const Description = styled.p`
-  font-size: 1.2em;
-  padding-top: 16px;
+  font-size: 20px;
+  padding-top: ${App.full};
 `;
 
 const Skills = styled.p`
-  font-size: 1.2em;
-  padding-top: 16px;
+  font-size: 20px;
+  padding-top: ${App.full};
   font-style: italic;
 `;
 
 const DividingLine = styled.div`
-  margin: 16px;
+  margin: ${App.full};
   height: 1px;
   background-color: ${Colors.white};
 `;

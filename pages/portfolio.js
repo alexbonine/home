@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import HomePage from '../layouts/home';
 import Colors from '../styles/colors';
 import App from '../styles/constants/app';
+import { mqTablet } from '../styles/screenSize';
 import Leaplife from '../components/portfolio/leaplife';
 import Marketo from '../components/portfolio/marketo';
 import Toutapp from '../components/portfolio/toutapp';
@@ -14,8 +15,6 @@ import RockwellCollins from '../components/portfolio/rockwellCollins';
 const PortfolioContainer = styled.div`
   max-width: ${App.maxWidth};
   padding: ${App.headerHeight} 0;
-  margin: 0 auto;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -27,13 +26,18 @@ const ScrollContainer = styled.ul`
 `;
 
 const Title = styled.h3`
-  font-size: 3em;
+  font-size: 48px;
   color: ${Colors.textLight};
-  margin-bottom: 16px;
+  margin-bottom: ${App.full};
+  display: none;
+
+  ${mqTablet} {
+    display: block;
+  }
 `;
 
 const Portfolio = () => (
-  <HomePage>
+  <HomePage gutters>
     <PortfolioContainer>
       <Title>Portfolio</Title>
       <ScrollContainer>
