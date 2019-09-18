@@ -26,14 +26,16 @@ export default {
   },
   fonts: {
     helvetica,
-    imFell: "'IM Fell English', serif",
+    // lato: `Lato, ${helvetica}`,
+    // montserrat: `Montserrat, ${helvetica}`,
     playfair: `'Playfair Display', ${helvetica}`,
+    sourceSansPro: `'Source Sans Pro', ${helvetica}`,
   },
   fontSizes: {
     normal: 400,
-    medium: 500,
-    semiBold: 600,
-    bold: 700,
+    // medium: 500,
+    // semiBold: 600,
+    // bold: 700,
   },
   gutters: {
     mobile: Constants.full,

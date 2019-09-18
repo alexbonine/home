@@ -61,15 +61,14 @@ const TitleContainer = styled.div`
 
 const Title = styled.h2`
   font-size: 10em;
-  font-family: 'Playfair Display', serif;
   font-weight: bold;
   animation-delay: calc(${GlitchConstants.delayAnim} + ${GlitchConstants.timeAnim} * 0.2);
   color: ${Colors.textLight};
   margin-top: 0.83em;
+  margin-bottom: ${App.full};
 `;
 
 const SubTitle = styled.p`
-  font-family: 'IM Fell English', serif;
   font-size: 1.5em;
   max-width: 600px;
   font-weight: 400;

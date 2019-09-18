@@ -14,7 +14,6 @@ const Item = styled.div`
 
 const Label = styled.h5`
   color: ${({ selected }) => (selected ? Colors.gray : Colors.white)};
-  font-family: 'IM Fell English', serif;
   font-size: 1.5em;
 
   &:hover {

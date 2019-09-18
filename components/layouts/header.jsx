@@ -3,18 +3,17 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
+import App from '../../styles/constants/app';
 
 const HeaderElement = styled.header`
-  font-family: 'Playfair Display', serif;
   width: 100%;
-  font-size: 1.25rem;
   position: absolute;
 `;
 
 const NavContainer = styled.nav`
   display: flex;
   justify-content: space-between;
-  margin: 16px;
+  margin: ${App.full};
 `;
 
 const NavList = styled.ul`
@@ -24,9 +23,12 @@ const NavList = styled.ul`
 `;
 
 const ATag = styled.a`
+  font-family: ${App.fonts.playfair};
+  letter-spacing: 0.5px;
+  font-size: 20px;
   position: relative;
-  padding-bottom: 8px;
-  margin: 0 16px;
+  padding-bottom: ${App.half};
+  margin: 0 ${App.full};
   color: white;
   text-decoration: none;
 

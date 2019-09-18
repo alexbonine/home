@@ -28,7 +28,6 @@ const ScrollContainer = styled.ul`
 
 const Title = styled.h3`
   font-size: 3em;
-  font-family: 'Playfair Display', serif;
   color: ${Colors.textLight};
   margin-bottom: 16px;
 `;

@@ -46,14 +46,11 @@ const PanelContainer = styled.div`
 
 const PanelTitle = styled.h3`
   font-size: 4em;
-  font-family: ${App.fonts.playfair};
   color: ${Colors.textLight};
   margin-bottom: ${App.full};
 `;
 
-const Panel = ({
- backgroundColor, centerHorizontal, centerVertical, children, gutters, paddingNavbar, title 
-}) => (
+const Panel = ({ backgroundColor, centerHorizontal, centerVertical, children, gutters, paddingNavbar, title }) => (
   <PanelContainer
     backgroundColor={backgroundColor}
     centerHorizontal={centerHorizontal}
