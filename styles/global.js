@@ -1,7 +1,7 @@
 import { css } from '@emotion/core';
 import emotionReset from 'emotion-reset';
 import Colors from './colors';
-import { mqMobile } from './grid';
+import { mqMobile } from './screenSize';
 import App from './constants/app';
 
 export default css`
@@ -30,6 +30,14 @@ export default css`
     font-family: 'Lato';
     font-display: swap;
     src: url('/static/fonts/Lato-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+  } */
+
+  /* @font-face {
+    font-family: 'Oswald';
+    font-display: swap;
+    src: url('/static/fonts/Oswald-Regular.ttf');
     font-weight: normal;
     font-style: normal;
   } */

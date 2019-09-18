@@ -1,4 +1,6 @@
-const helvetica = '\'Helvetica Neue\', Helvetica, Roboto, Arial, sans-serif';
+import { MQBreakpoints, MQConstants } from '../screenSize';
+
+const helvetica = "'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif";
 
 const Constants = {
   half: '8px',
@@ -7,27 +9,15 @@ const Constants = {
   double: '32px',
 };
 
-const MQConstants = {
-  mobile: 'mobile',
-  mobileOnly: 'mobile-only',
-  tabletOnly: 'tablet-only',
-  tablet: 'tablet',
-  desktop: 'desktop',
-};
-
 export default {
   ...Constants,
   ...MQConstants,
-  breakpoints: {
-    mobileMax: '767px',
-    tabletMin: '768px',
-    tabletMax: '1279px',
-    desktopMin: '1280px',
-  },
+  ...MQBreakpoints,
   fonts: {
     helvetica,
     // lato: `Lato, ${helvetica}`,
     // montserrat: `Montserrat, ${helvetica}`,
+    // oswald: `Oswald, ${helvetica}`,
     playfair: `'Playfair Display', ${helvetica}`,
     sourceSansPro: `'Source Sans Pro', ${helvetica}`,
   },

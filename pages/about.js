@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import HomePage from '../layouts/home';
 import Colors from '../styles/colors';
 import App from '../styles/constants/app';
-import { mqDesktop, mqTablet } from '../styles/grid';
+import { mqDesktop, mqTablet } from '../styles/screenSize';
 import Panel from '../components/layouts/panel';
 
 const AboutContainer = styled.div`

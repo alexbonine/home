@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export default function useMedia(queries, values, defaultValue) {
+export default function useMediaColumns(queries, values, defaultValue) {
   const match = () => values[queries.findIndex((query) => window.matchMedia(query).matches)] || defaultValue;
 
   const [value, set] = useState(match);

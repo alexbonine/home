@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 import App from '../../styles/constants/app';
+import { mqTablet } from '../../styles/screenSize';
 
 const HeaderElement = styled.header`
   width: 100%;
@@ -13,13 +14,18 @@ const HeaderElement = styled.header`
 const NavContainer = styled.nav`
   display: flex;
   justify-content: space-between;
-  margin: ${App.full};
+  margin: ${App.full} 0;
 `;
 
 const NavList = styled.ul`
   position: fixed;
   z-index: 1;
   right: ${({ right }) => right && 0};
+
+  ${mqTablet} {
+    left: ${({ right }) => !right && App.half};
+    right: ${({ right }) => right && App.half};
+  }
 `;
 
 const ATag = styled.a`

@@ -5,9 +5,8 @@ import Colors from '../../styles/colors';
 import App from '../../styles/constants/app';
 import { GlitchConstants } from '../../styles/constants/animations';
 import GlitchImage from './glitchImage';
-// import Panel from '../layouts/panel';
-import panel from '../../styles/components/panel';
-import { flexCenterAll } from '../../styles/flex';
+import Panel from '../layouts/panel';
+import { mqTablet } from '../../styles/screenSize';
 
 const GlitchText = keyframes`
   0% {
@@ -60,20 +59,28 @@ const TitleContainer = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 10em;
+  font-size: 120px;
   font-weight: bold;
   animation-delay: calc(${GlitchConstants.delayAnim} + ${GlitchConstants.timeAnim} * 0.2);
   color: ${Colors.textLight};
-  margin-top: 0.83em;
   margin-bottom: ${App.full};
+
+  ${mqTablet} {
+    font-size: 160px;
+    margin-top: 0.83em;
+  }
 `;
 
 const SubTitle = styled.p`
-  font-size: 1.5em;
-  max-width: 600px;
+  font-size: 20px;
   font-weight: 400;
   animation-delay: calc(${GlitchConstants.delayAnim} + ${GlitchConstants.timeAnim} * 0.25);
   color: ${Colors.textLight};
+
+  ${mqTablet} {
+    max-width: 600px;
+    font-size: 24px;
+  }
 `;
 
 const glitchText = css`
@@ -85,7 +92,7 @@ const glitchText = css`
 
 const Welcome = () => {
   return (
-    <div className="loaded" css={[panel, flexCenterAll]}>
+    <Panel centerHorizontal centerVertical paddingNavbar>
       <GlitchImage />
       <TitleContainer>
         <Title css={glitchText}>Alex Bonine</Title>
@@ -96,7 +103,7 @@ const Welcome = () => {
           tiny start-up.
         </SubTitle>
       </TitleContainer>
-    </div>
+    </Panel>
   );
 };
 

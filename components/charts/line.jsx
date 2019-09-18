@@ -33,8 +33,6 @@ const YAxis = styled(Axis)`
   }
 `;
 
-const width = 500;
-const height = 400;
 const margin = {
   top: 20,
   right: 20,
@@ -73,7 +71,9 @@ const formatData = (data, prefix = '') => {
   return { [`${prefix}`]: data.proficiency };
 };
 
-const Line = ({ breadcrumbs, color, data }) => {
+const Line = ({
+ breadcrumbs, color, data, height, width 
+}) => {
   const xAxisRef = useRef(null);
   const yAxisRef = useRef(null);
   const xAxis = useRef(
@@ -107,7 +107,7 @@ const Line = ({ breadcrumbs, color, data }) => {
       .curve(curveBasis); // d3.curveCatmullRom.alpha(1)
 
     return { xScale: x, yScale: y, lineDrawer: lineDraw };
-  }, []);
+  }, [height, width]);
 
   useEffect(() => {
     xAxis.current.scale(xScale);
@@ -152,10 +152,14 @@ Line.propTypes = {
   breadcrumbs: PropTypes.arrayOf(PropTypes.string).isRequired,
   color: PropTypes.string,
   data: HierarchyDataShape.isRequired,
+  height: PropTypes.number,
+  width: PropTypes.number,
 };
 
 Line.defaultProps = {
   color: '',
+  height: 400,
+  width: 500,
 };
 
 export default Line;

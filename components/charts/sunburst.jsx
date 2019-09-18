@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import { arc, format, hierarchy, interpolateRainbow, partition, quantize, scaleOrdinal } from 'd3';
 import { HierarchyDataShape } from './chartShapes';
 import Colors from '../../styles/colors';
+import App from '../../styles/constants/app';
 
 const SunburstSvg = styled.svg`
   max-width: 100%;
@@ -11,8 +12,8 @@ const SunburstSvg = styled.svg`
   height: auto;
   flex-shrink: 1 1 auto;
   margin: 5px;
-  font: 13px 'Playfair Display', sans-serif;
-  font-weight: 600;
+  font: 16px ${App.fonts.playfair};
+  font-weight: 400;
   cursor: pointer;
   /* display: block; */
 
@@ -21,8 +22,8 @@ const SunburstSvg = styled.svg`
   }
 `;
 
-const width = 975;
-const radius = width / 2;
+const defaultWidth = 975;
+const radius = defaultWidth / 2;
 
 const formatTitle = format(',d');
 

@@ -1,11 +1,13 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import styled from '@emotion/styled';
 import Panel from '../layouts/panel';
 import Sunburst from '../charts/sunburst';
 import Line from '../charts/line';
 import data from '../../utils/skillsData.json';
 import App from '../../styles/constants/app';
-// import HomepageStyles from '../../styles/components/homepage';
+import { flexShrinkNone } from '../../styles/flex';
+import { MQBreakpoints, mqDesktop, mqTablet } from '../../styles/screenSize';
+import useMeasure from '../../hooks/useMeasure';
 
 const SkillsContainer = styled.div`
   max-width: ${App.maxWidth};
@@ -26,8 +28,24 @@ const SkillsWrapper = styled.div`
   width: 100%;
   overflow: auto;
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  flex-direction: column;
+
+  ${mqTablet} {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  ${mqDesktop} {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+`;
+
+const LineContainer = styled.div`
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: flex-end;
 `;
 
 const Skills = () => {
@@ -47,6 +65,23 @@ const Skills = () => {
     [setState]
   );
 
+  const [{ ref }, { width: measureWidth }] = useMeasure();
+  const lineWidth = useMemo(() => {
+    const defaultChartWidth = 500;
+    const measureWidthLessSunburst = measureWidth - defaultChartWidth;
+
+    // is not initial render
+    if (measureWidth) {
+      if (measureWidthLessSunburst < MQBreakpoints.mobileMax - defaultChartWidth) {
+        return 0;
+      } else if (measureWidthLessSunburst < defaultChartWidth) {
+        return measureWidthLessSunburst;
+      }
+    }
+
+    return defaultChartWidth;
+  }, [measureWidth]);
+
   // componentDidMount() {
   //   Promise.all([
   //     fetch(`${process.env.PUBLIC_URL || ""}/sf.json`),
@@ -64,9 +99,13 @@ const Skills = () => {
   return (
     <Panel title="Skills & Tech" centerHorizontal paddingNavbar>
       <SkillsContainer>
-        <SkillsWrapper>
-          <Sunburst data={data} setBreadcrumbs={setBreadcrumbs} />
-          <Line breadcrumbs={state.breadcrumbs} color={state.breadcrumbsColor} data={data} />
+        <SkillsWrapper ref={ref}>
+          <Sunburst css={[flexShrinkNone]} data={data} setBreadcrumbs={setBreadcrumbs} />
+          {lineWidth > 0 && (
+            <LineContainer>
+              <Line breadcrumbs={state.breadcrumbs} color={state.breadcrumbsColor} data={data} width={lineWidth} />
+            </LineContainer>
+          )}
         </SkillsWrapper>
       </SkillsContainer>
     </Panel>

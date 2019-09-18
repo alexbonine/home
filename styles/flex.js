@@ -25,3 +25,7 @@ export const flexCenterColumn = css`
   flex-direction: column;
   align-items: center;
 `;
+
+export const flexShrinkNone = css`
+  flex-shrink: 0;
+`;

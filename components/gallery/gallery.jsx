@@ -7,7 +7,7 @@ import { useTransition, animated } from 'react-spring';
 import GalleryItem from './galleryItem';
 import GalleryHeader, { All } from './galleryHeader';
 import useMeasure from '../../hooks/useMeasure';
-import useMedia from '../../hooks/useMedia';
+import useMediaColumns from '../../hooks/useMediaColumns';
 import App from '../../styles/constants/app';
 
 const GalleryContainer = styled.div``;
@@ -73,7 +73,7 @@ const Gallery = ({ all, headers, items }) => {
   const shownItems = (selected === All ? orderedSections[All] : orderedSections[selected]) || [];
 
   const [{ ref }, { width: measureWidth }] = useMeasure();
-  const columns = useMedia(['(min-width: 768px)'], [3], 2);
+  const columns = useMediaColumns(['(min-width: 768px)'], [3], 2);
   const heights = new Array(columns).fill(0); // Each column gets a height starting with zero
   const gridItems = shownItems.map((child, i) => {
     // const column = heights.indexOf(Math.min(...heights)); // Basic masonry-grid placing, puts tile into the smallest column using Math.min

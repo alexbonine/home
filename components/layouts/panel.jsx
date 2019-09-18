@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import Colors from '../../styles/colors';
-import { mqDesktop, mqTablet } from '../../styles/grid';
+import { mqDesktop, mqTablet } from '../../styles/screenSize';
 import App from '../../styles/constants/app';
 
 const getContainerPaddingTop = (screenSize, paddingNavbar) => {
@@ -50,7 +50,9 @@ const PanelTitle = styled.h3`
   margin-bottom: ${App.full};
 `;
 
-const Panel = ({ backgroundColor, centerHorizontal, centerVertical, children, gutters, paddingNavbar, title }) => (
+const Panel = ({
+ backgroundColor, centerHorizontal, centerVertical, children, gutters, paddingNavbar, title 
+}) => (
   <PanelContainer
     backgroundColor={backgroundColor}
     centerHorizontal={centerHorizontal}
