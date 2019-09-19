@@ -45,9 +45,13 @@ const PanelContainer = styled.div`
 `;
 
 const PanelTitle = styled.h3`
-  font-size: 4em;
+  font-size: 48px;
   color: ${Colors.textLight};
   margin-bottom: ${App.full};
+
+  ${mqTablet} {
+    font-size: 64px;
+  }
 `;
 
 const Panel = ({ backgroundColor, centerHorizontal, centerVertical, children, gutters, paddingNavbar, title }) => (

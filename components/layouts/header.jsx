@@ -20,11 +20,12 @@ const NavContainer = styled.nav`
 const NavList = styled.ul`
   position: fixed;
   z-index: 1;
-  right: ${({ right }) => right && 0};
+  left: ${({ right }) => !right && App.full};
+  right: ${({ right }) => right && App.full};
 
   ${mqTablet} {
-    left: ${({ right }) => !right && App.half};
-    right: ${({ right }) => right && App.half};
+    left: ${({ right }) => !right && App.more};
+    right: ${({ right }) => right && App.more};
   }
 `;
 
@@ -73,7 +74,7 @@ const Header = () => {
         <NavList>
           <li>
             <Link href="/">
-              <ATag>AB</ATag>
+              <ATag css={{ marginLeft: 0 }}>AB</ATag>
             </Link>
           </li>
         </NavList>
@@ -90,7 +91,7 @@ const Header = () => {
           </li>
           <li>
             <Link href="/contact">
-              <ATag css={router.pathname === '/contact' ? Selected : ''}>Contact</ATag>
+              <ATag css={[router.pathname === '/contact' ? Selected : '', { marginRight: 0 }]}>Contact</ATag>
             </Link>
           </li>
         </NavList>

@@ -21,7 +21,7 @@ const PortfolioContainer = styled.div`
 `;
 
 const ScrollContainer = styled.ul`
-  overflow: auto;
+  overflow-y: auto;
   flex: 1 1 auto;
 `;
 

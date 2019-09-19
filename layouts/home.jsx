@@ -9,6 +9,8 @@ import Copyright from '../components/layouts/copyright';
 const HomeContainer = styled.div`
   margin: 0 auto;
   min-height: 100vh;
+  position: relative;
+  overflow: hidden;
   padding: ${({ gutters }) => `0 ${gutters ? App.gutters.mobile : 0}`};
 
   ${mqTablet} {
@@ -20,8 +22,8 @@ const HomeContainer = styled.div`
   }
 `;
 
-const Home = ({ children }) => (
-  <HomeContainer>
+const Home = ({ children, gutters }) => (
+  <HomeContainer gutters={gutters}>
     <Header />
     {children}
     <Copyright />

@@ -92,7 +92,7 @@ const glitchText = css`
 
 const Welcome = () => {
   return (
-    <Panel centerHorizontal centerVertical paddingNavbar>
+    <Panel centerHorizontal centerVertical gutters paddingNavbar>
       <GlitchImage />
       <TitleContainer>
         <Title css={glitchText}>Alex Bonine</Title>
