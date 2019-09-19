@@ -10,17 +10,10 @@ import { MQBreakpoints, mqDesktop, mqTablet } from '../../styles/screenSize';
 import useMeasure from '../../hooks/useMeasure';
 
 const SkillsContainer = styled.div`
-  max-width: ${App.maxWidth};
   width: 100%;
   display: flex;
   flex-direction: column;
 `;
-
-// const Text = styled.p`
-//   font-size: 2em;
-//   font-family: 'Playfair Display', serif;
-//   color: ${HomepageStyles.textMain};
-// `;
 
 const SkillsWrapper = styled.div`
   margin-top: 16px;

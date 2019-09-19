@@ -14,7 +14,6 @@ const WorkContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: ${App.maxWidth};
 `;
 
 const GalleryItemIds = {

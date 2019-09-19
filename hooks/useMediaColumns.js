@@ -1,7 +1,16 @@
 import { useEffect, useState } from 'react';
+import { MQBreakpointsPixels, MQConstants } from '../styles/screenSize';
 
-export default function useMediaColumns(queries, values, defaultValue) {
-  const match = () => values[queries.findIndex((query) => window.matchMedia(query).matches)] || defaultValue;
+const Queries = {
+  [MQConstants.mobile]: `(max-width: ${MQBreakpointsPixels.mobileMax})`,
+  [MQConstants.tablet]: `(max-width: ${MQBreakpointsPixels.tabletMax})`,
+  [MQConstants.desktop]: `(min-width: ${MQBreakpointsPixels.desktopMin})`,
+};
+
+export default function useMediaColumns(queryValues = [], defaultValue = MQConstants.mobile) {
+  const match = () =>
+    (queryValues.find((queryObj) => window.matchMedia(Queries[queryObj.query]).matches) || { value: defaultValue })
+      .value;
 
   const [value, set] = useState(match);
 

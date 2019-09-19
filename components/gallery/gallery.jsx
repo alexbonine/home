@@ -10,19 +10,15 @@ import useMeasure from '../../hooks/useMeasure';
 import useMediaColumns from '../../hooks/useMediaColumns';
 import App from '../../styles/constants/app';
 
+const ItemWidth = 400;
+
 const GalleryContainer = styled.div``;
 
 const ItemContainer = styled.div`
-  margin: 20px 0;
-  max-width: ${App.maxWidth};
+  margin: 20px auto;
   width: 100%;
   height: 100%;
   position: relative;
-  /* display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center; */
 `;
 
 const AnimatedDiv = styled(animated.div)`
@@ -73,11 +69,12 @@ const Gallery = ({ all, headers, items }) => {
   const shownItems = (selected === All ? orderedSections[All] : orderedSections[selected]) || [];
 
   const [{ ref }, { width: measureWidth }] = useMeasure();
-  const columns = useMediaColumns(['(min-width: 768px)'], [3], 2);
+  const columns = useMediaColumns(
+    [{ query: App.mobile, value: 1 }, { query: App.tablet, value: 2 }, { query: App.desktop, value: 3 }],
+    1
+  );
   const heights = new Array(columns).fill(0); // Each column gets a height starting with zero
   const gridItems = shownItems.map((child, i) => {
-    // const column = heights.indexOf(Math.min(...heights)); // Basic masonry-grid placing, puts tile into the smallest column using Math.min
-    // const xy = [(measureWidth / columns) * column, (heights[column] += 300 / 2) - 300 / 2]; // X = container width / number of columns * column index, Y = it's just the height of the current column
     const column = i % columns;
 
     const xy = [(measureWidth / columns) * column, heights[column]];
@@ -113,14 +110,16 @@ const Gallery = ({ all, headers, items }) => {
   return (
     <GalleryContainer>
       <GalleryHeader all={all} items={headers} onSelect={setSelected} selected={selected} />
-      <ItemContainer ref={ref} style={{ height: Math.max(...heights) }}>
-        {transitions.map(({ item: { image, label, link, subtitle }, props: { xy, ...rest }, key         }) => (
-          <AnimatedDiv
-    key={key}
-    style={{ transform: xy.interpolate((x, y) => `translate3d(${x}px,${y}px,0)`), ...rest }}
-  >
-    <GalleryItem image={image} label={label} link={link} subtitle={subtitle} />
-  </AnimatedDiv>
+      <ItemContainer ref={ref} style={{ height: Math.max(...heights), width: `${columns * ItemWidth}px` }}>
+        {transitions.map(({
+ item: { image, label, link, subtitle         }, props: { xy, ...rest }, key 
+}) => (
+  <AnimatedDiv
+            key={key}
+            style={{ transform: xy.interpolate((x, y) => `translate3d(${x}px,${y}px,0)`), ...rest }}
+          >
+            <GalleryItem image={image} label={label} link={link} subtitle={subtitle} itemWidth={ItemWidth} />
+          </AnimatedDiv>
         ))}
       </ItemContainer>
     </GalleryContainer>

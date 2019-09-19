@@ -8,7 +8,6 @@ const Image = styled.div`
   max-width: 100%;
   transition: opacity 0.5s;
   height: 250px;
-  width: 400px;
 `;
 
 const Text = styled.div`
@@ -50,7 +49,8 @@ const Item = styled.div`
   position: relative;
   /* background-size: cover;
   background-position: center center; */
-  width: 100%;
+  width: ${({ itemWidth }) => `${itemWidth}px`};
+  /* width: 400px; */
   height: 100%;
   overflow: hidden;
   /* text-transform: uppercase; */
@@ -79,8 +79,8 @@ const Item = styled.div`
   }
 `;
 
-const GalleryItem = ({ image, label, link, subtitle }) => (
-  <Item>
+const GalleryItem = ({ image, label, link, subtitle, itemWidth }) => (
+  <Item itemWidth={itemWidth}>
     <Image image={image} />
     <Text>
       <Title>{label}</Title>
@@ -102,11 +102,13 @@ GalleryItem.propTypes = {
   label: PropTypes.string.isRequired,
   link: PropTypes.string,
   subtitle: PropTypes.string,
+  itemWidth: PropTypes.number,
 };
 
 GalleryItem.defaultProps = {
   link: '',
   subtitle: '',
+  itemWidth: 400,
 };
 
 export default GalleryItem;

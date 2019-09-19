@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import Colors from '../../styles/colors';
-import { mqDesktop, mqTablet } from '../../styles/screenSize';
+import { mqTablet } from '../../styles/screenSize';
 import App from '../../styles/constants/app';
 
 const getContainerPaddingTop = (screenSize, paddingNavbar) => {
@@ -17,32 +17,40 @@ const getContainerPaddingTop = (screenSize, paddingNavbar) => {
   return '0';
 };
 
-const containerPadding = (screenSize) => ({ gutters, paddingNavbar }) => {
+const containerSpacing = (screenSize, { gutters, paddingNavbar }) => {
   const paddingGutters = gutters ? App.gutters[screenSize] : '0';
   const paddingTop = getContainerPaddingTop(screenSize, paddingNavbar);
 
-  return `${paddingTop} ${paddingGutters} ${App.headerHeight} ${paddingGutters}`;
+  return {
+    padding: `${paddingTop} ${paddingGutters} ${App.headerHeight} ${paddingGutters}`,
+  };
 };
 
-const PanelContainer = styled.div`
-  align-items: ${({ centerHorizontal }) => centerHorizontal && 'center'};
-  background: ${({ backgroundColor }) => backgroundColor};
-  display: flex;
-  flex-direction: column;
-  justify-content: ${({ centerVertical }) => centerVertical && 'center'};
-  margin: 0 auto;
-  min-height: 100vh;
-  padding: ${containerPadding(App.mobile)};
-  position: relative;
+const PanelContainer = styled.div(
+  {
+    minHeight: '100vh',
+    position: 'relative',
+  },
+  ({ backgroundColor, ...rest }) => ({
+    background: backgroundColor,
+    ...containerSpacing(App.mobile, rest),
+    [mqTablet]: containerSpacing(App.tablet, rest),
+    [mqTablet]: containerSpacing(App.tablet, rest),
+  })
+);
 
-  ${mqTablet} {
-    padding: ${containerPadding(App.tablet)};
-  }
-
-  ${mqDesktop} {
-    padding: ${containerPadding(App.desktop)};
-  }
-`;
+const PanelChild = styled.div(
+  {
+    maxWidth: App.maxWidth,
+    margin: '0 auto',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  ({ centerHorizontal, centerVertical }) => ({
+    alignItems: (centerHorizontal && 'center') || undefined,
+    justifyContent: (centerVertical && 'center') || undefined,
+  })
+);
 
 const PanelTitle = styled.h3`
   font-size: 48px;
@@ -54,16 +62,14 @@ const PanelTitle = styled.h3`
   }
 `;
 
-const Panel = ({ backgroundColor, centerHorizontal, centerVertical, children, gutters, paddingNavbar, title }) => (
-  <PanelContainer
-    backgroundColor={backgroundColor}
-    centerHorizontal={centerHorizontal}
-    centerVertical={centerVertical}
-    gutters={gutters}
-    paddingNavbar={paddingNavbar}
-  >
-    {title && <PanelTitle>{title}</PanelTitle>}
-    {children}
+const Panel = ({
+ backgroundColor, centerHorizontal, centerVertical, children, gutters, paddingNavbar, title 
+}) => (
+  <PanelContainer backgroundColor={backgroundColor} gutters={gutters} paddingNavbar={paddingNavbar}>
+    <PanelChild centerHorizontal={centerHorizontal} centerVertical={centerVertical}>
+      {title && <PanelTitle>{title}</PanelTitle>}
+      {children}
+    </PanelChild>
   </PanelContainer>
 );
 
