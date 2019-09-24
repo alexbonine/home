@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import Colors from '../../styles/colors';
 import App from '../../styles/constants/app';
 import { mqDesktop } from '../../styles/screenSize';
-import PortfolioImages, { PortfolioImageShape } from './portfolioImages';
+import Carousel, { CarouselImageShape } from '../carousel/carousel';
 
 const Container = styled.div`
   display: flex;
@@ -57,13 +57,7 @@ const DividingLine = styled.div`
   background-color: ${Colors.white};
 `;
 
-const ImagesContainer = styled.div`
-  flex-shrink: 0;
-`;
-
-const PortfolioChild = ({
- children, description, images, itemId, subtitle, skills, title, titleLink 
-}) => (
+const PortfolioChild = ({ children, description, images, itemId, subtitle, skills, title, titleLink }) => (
   <Container id={itemId}>
     <TextContainer>
       {titleLink ? (
@@ -79,18 +73,14 @@ const PortfolioChild = ({
       <DividingLine />
       {children}
     </TextContainer>
-    {images.length > 0 && (
-      <ImagesContainer>
-        <PortfolioImages images={images} />
-      </ImagesContainer>
-    )}
+    <Carousel css={{ flexShrink: 0 }} images={images} />
   </Container>
 );
 
 PortfolioChild.propTypes = {
   children: PropTypes.node.isRequired,
   description: PropTypes.string,
-  images: PropTypes.arrayOf(PortfolioImageShape),
+  images: PropTypes.arrayOf(CarouselImageShape),
   itemId: PropTypes.string.isRequired,
   skills: PropTypes.arrayOf(PropTypes.string),
   subtitle: PropTypes.string,

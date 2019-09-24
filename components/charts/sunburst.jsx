@@ -79,7 +79,7 @@ const Sunburst = ({ data, setBreadcrumbs }) => {
 
   const mouseleave = useCallback(
     (e) => {
-      for (let i = 0; i < svgRef.current.children[0].children.length; i++) {
+      for (let i = 0; i < svgRef.current.children[0].children.length; i += 1) {
         const child = svgRef.current.children[0].children[i];
         child.style.transition = 'opacity 1000ms';
         child.style.opacity = 1;
