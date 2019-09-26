@@ -10,6 +10,7 @@ const Container = styled.div`
   height: ${({ height }) => `${height}px`};
   width: ${({ width }) => `${width}px`};
   overflow: hidden;
+  flex-shrink: 0;
 `;
 
 const AnimatedImage = styled(animated.img)`
@@ -80,9 +81,7 @@ const Counter = styled.div`
   font-weight: 600;
 `;
 
-const Carousel = ({
- height, images, sizeSuffix, width 
-}) => {
+const Carousel = ({ height, images, sizeSuffix, width }) => {
   const [shownIndex, setShownIndex] = useState(0);
   const memoImages = useMemo(
     () =>

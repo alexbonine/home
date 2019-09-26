@@ -17,11 +17,13 @@ const getContainerPaddingTop = (screenSize, paddingNavbar) => {
   return '0';
 };
 
-const containerSpacing = (screenSize, { gutters, paddingNavbar }) => {
+const containerSpacing = (screenSize, { fullHeight, gutters, paddingNavbar }) => {
   const paddingGutters = gutters ? App.gutters[screenSize] : '0';
   const paddingTop = getContainerPaddingTop(screenSize, paddingNavbar);
+  const heightStuff = fullHeight ? { display: 'flex', flexDirection: 'column' } : {};
 
   return {
+    ...heightStuff,
     padding: `${paddingTop} ${paddingGutters} ${App.headerHeight} ${paddingGutters}`,
   };
 };
@@ -46,9 +48,11 @@ const PanelChild = styled.div(
     display: 'flex',
     flexDirection: 'column',
   },
-  ({ centerHorizontal, centerVertical }) => ({
+  ({ centerHorizontal, centerVertical, fullHeight, fullWidth   }) => ({
     alignItems: (centerHorizontal && 'center') || undefined,
     justifyContent: (centerVertical && 'center') || undefined,
+    flex: (fullHeight && '1 1 auto') || undefined,
+    width: (fullWidth && '100%') || undefined,
   })
 );
 
@@ -63,10 +67,28 @@ const PanelTitle = styled.h3`
 `;
 
 const Panel = ({
- backgroundColor, centerHorizontal, centerVertical, children, gutters, paddingNavbar, title 
+  backgroundColor,
+  centerHorizontal,
+  centerVertical,
+  children,
+  fullHeight,
+  fullWidth,
+  gutters,
+  paddingNavbar,
+  title,
 }) => (
-  <PanelContainer backgroundColor={backgroundColor} gutters={gutters} paddingNavbar={paddingNavbar}>
-    <PanelChild centerHorizontal={centerHorizontal} centerVertical={centerVertical}>
+  <PanelContainer
+    backgroundColor={backgroundColor}
+    fullHeight={fullHeight}
+    gutters={gutters}
+    paddingNavbar={paddingNavbar}
+  >
+    <PanelChild
+      centerHorizontal={centerHorizontal}
+      centerVertical={centerVertical}
+      fullHeight={fullHeight}
+      fullWidth={fullWidth}
+    >
       {title && <PanelTitle>{title}</PanelTitle>}
       {children}
     </PanelChild>
@@ -78,6 +100,8 @@ Panel.propTypes = {
   centerHorizontal: PropTypes.bool,
   centerVertical: PropTypes.bool,
   children: PropTypes.node.isRequired,
+  fullHeight: PropTypes.bool,
+  fullWidth: PropTypes.bool,
   gutters: PropTypes.bool,
   paddingNavbar: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   title: PropTypes.string,
@@ -87,6 +111,8 @@ Panel.defaultProps = {
   backgroundColor: Colors.backgroundDark,
   centerHorizontal: false,
   centerVertical: false,
+  fullHeight: false,
+  fullWidth: false,
   gutters: false,
   paddingNavbar: false,
   title: '',

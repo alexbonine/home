@@ -1,7 +1,16 @@
 import { css } from '@emotion/core';
 
+export const fullWidth = css`
+  width: 100%;
+`;
+
 export const flex = css`
   display: flex;
+`;
+
+export const flexColumn = css`
+  display: flex;
+  flex-direction: column;
 `;
 
 export const flexCenterAll = css`
@@ -28,4 +37,8 @@ export const flexCenterColumn = css`
 
 export const flexShrinkNone = css`
   flex-shrink: 0;
+`;
+
+export const flexFull = css`
+  flex: 1 1 auto;
 `;
