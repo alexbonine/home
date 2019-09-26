@@ -5,7 +5,12 @@ import styled from '@emotion/styled';
 import { HierarchyDataShape } from './chartShapes';
 import Colors from '../../styles/colors';
 
-// todo add label?
+const margin = {
+  top: 20,
+  right: 20,
+  bottom: 50,
+  left: 50,
+};
 
 const Axis = styled.g`
   & line,
@@ -17,28 +22,17 @@ const Axis = styled.g`
 
   & text {
     fill: ${Colors.white};
-    font-size: 12px;
+    font-size: 16px;
+    font-weight: 600;
   }
 `;
 
-const XAxis = styled(Axis)`
-  & text {
-    transform: translate(0, 5px);
-  }
+const AxisLabel = styled.text`
+  text-anchor: middle;
+  fill: ${Colors.white};
+  font-size: 16px;
+  font-weight: 600;
 `;
-
-const YAxis = styled(Axis)`
-  & text {
-    transform: translate(-5px, 0);
-  }
-`;
-
-const margin = {
-  top: 20,
-  right: 20,
-  bottom: 30,
-  left: 40,
-};
 
 const formatBreadcrumbName = (name = '') => name.toLowerCase().replace(/ /i, '_');
 
@@ -142,8 +136,19 @@ const Line = ({
       {lines.map(({ d, stroke, id }) => (
         <path d={d} fill="none" key={id} stroke={stroke} strokeWidth="5" strokeLinejoin="round" strokeLinecap="round" />
       ))}
-      <XAxis ref={xAxisRef} transform={`translate(0, ${height - margin.bottom})`} />
-      <YAxis ref={yAxisRef} transform={`translate(${margin.left}, 0)`} />
+      <Axis ref={xAxisRef} transform={`translate(0, ${height - margin.bottom})`} />
+      <AxisLabel id="x-axis-label" x={(margin.left - margin.right + width) / 2} y={height - 5}>
+        Year
+      </AxisLabel>
+      <Axis ref={yAxisRef} transform={`translate(${margin.left}, 0)`} />
+      <AxisLabel
+        id="y-axis-label"
+        x={margin.left + margin.right / 2}
+        y={(height + margin.top) / 2}
+        transform={`rotate(-90, ${margin.left / 2}, ${margin.top + height / 2})`}
+      >
+        Experience
+      </AxisLabel>
     </svg>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import styled from '@emotion/styled';
+import { useTransition, animated } from 'react-spring';
 import Panel from '../layouts/panel';
 import RadioButtons from '../buttons/radioButtons';
 import Sunburst from '../charts/sunburst';
@@ -23,6 +24,7 @@ const SkillsButtons = [
 ];
 
 const ChartMaxHeight = '543px';
+const DefaultLineWidth = 600;
 
 const SkillsContainer = styled.div`
   width: 100%;
@@ -34,11 +36,14 @@ const SkillsContainer = styled.div`
 const ChartsContainer = styled.div`
   flex: 1 1 auto;
   padding-top: ${App.full};
+  position: relative;
 `;
 
-// const StyledScatterplot = styled(Scatterplot)`
-//   max-height: ${ChartMaxHeight};
-// `;
+const AnimatedDiv = styled(animated.div)`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+`;
 
 const SkillsWrapper = styled.div`
   margin-top: ${App.full};
@@ -87,20 +92,25 @@ const Skills = () => {
 
   const [{ ref }, { width: measureWidth }] = useMeasure(selected === SkillsButtonsIds.timeline);
   const lineWidth = useMemo(() => {
-    const defaultChartWidth = 500;
-    const measureWidthLessSunburst = measureWidth - defaultChartWidth;
+    const measureWidthLessSunburst = measureWidth - DefaultLineWidth;
 
     // is not initial render
     if (measureWidth) {
-      if (measureWidthLessSunburst < MQBreakpoints.mobileMax - defaultChartWidth) {
+      if (measureWidthLessSunburst < MQBreakpoints.mobileMax - DefaultLineWidth) {
         return 0;
-      } else if (measureWidthLessSunburst < defaultChartWidth) {
+      } else if (measureWidthLessSunburst < DefaultLineWidth) {
         return measureWidthLessSunburst;
       }
     }
 
-    return defaultChartWidth;
+    return DefaultLineWidth;
   }, [measureWidth]);
+
+  const transitions = useTransition(selected, (p) => p, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+  });
 
   // componentDidMount() {
   //   Promise.all([
@@ -121,18 +131,28 @@ const Skills = () => {
       <SkillsContainer css={[flexColumn, flexFull]}>
         <RadioButtons css={[flexShrinkNone]} buttons={SkillsButtons} onClick={setSelected} selected={selected} />
         <ChartsContainer css={[fullWidth, flexFull]}>
-          {selected === SkillsButtonsIds.interests && (
-            <Scatterplot css={{ maxHeight: ChartMaxHeight }} data={interestsData} />
-          )}
-          {selected === SkillsButtonsIds.timeline && (
-            <SkillsWrapper ref={ref}>
-              <Sunburst css={[flexShrinkNone]} data={data} setBreadcrumbs={setBreadcrumbs} />
-              {lineWidth > 0 && (
-                <LineContainer>
-                  <Line breadcrumbs={state.breadcrumbs} color={state.breadcrumbsColor} data={data} width={lineWidth} />
-                </LineContainer>
-              )}
-            </SkillsWrapper>
+          {transitions.map(({ item, props }) =>
+            item === SkillsButtonsIds.interests ? (
+              <AnimatedDiv style={props} key="interests">
+                <Scatterplot css={{ maxHeight: ChartMaxHeight }} data={interestsData} />
+              </AnimatedDiv>
+            ) : (
+              <AnimatedDiv style={props} key="timeline">
+                <SkillsWrapper ref={ref}>
+                  <Sunburst css={[flexShrinkNone]} data={data} setBreadcrumbs={setBreadcrumbs} />
+                  {lineWidth > 0 && (
+                    <LineContainer>
+                      <Line
+                        breadcrumbs={state.breadcrumbs}
+                        color={state.breadcrumbsColor}
+                        data={data}
+                        width={lineWidth}
+                      />
+                    </LineContainer>
+                  )}
+                </SkillsWrapper>
+              </AnimatedDiv>
+            )
           )}
         </ChartsContainer>
       </SkillsContainer>

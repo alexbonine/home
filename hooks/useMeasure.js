@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
 
-export default function useMeasure(showing = false) {
+export default function useMeasure(showing = true) {
   const ref = useRef();
   const [bounds, set] = useState({
     left: 0,
