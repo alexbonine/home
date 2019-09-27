@@ -13,11 +13,8 @@ const margin = {
 };
 
 const Axis = styled.g`
+  & line,
   path.domain {
-    display: none;
-  }
-
-  & line {
     stroke: ${Colors.white};
   }
 
@@ -35,6 +32,16 @@ const AxisLabel = styled.text`
   font-weight: 600;
 `;
 
+const Grid = styled.g`
+  path.domain {
+    display: none;
+  }
+
+  & line {
+    stroke: #3d4046;
+  }
+`;
+
 const Coords = styled.g`
   font-size: 10px;
   fill: ${Colors.white};
@@ -43,10 +50,16 @@ const Coords = styled.g`
 const formatId = (category = '', name = '') => `${category}-${name}`.toLowerCase().replace(/( |-)/gi, '_');
 
 const formatData = ({ categories, data }) => {
+  const colorScale = scaleOrdinal(quantize(interpolateRainbow, (categories || []).length));
+
   return {
     categories,
-    categoryIndexMap: categories.reduce((accum, category, index) => {
-      accum[category] = index;
+    categoryColorMap: categories.reduce((accum, category, index) => {
+      if (typeof category === 'object' && Colors.grid.hasOwnProperty(category.color)) {
+        accum[category.name] = Colors.grid[category.color];
+      } else {
+        accum[category] = colorScale(index);
+      }
 
       return accum;
     }, {}),
@@ -59,16 +72,24 @@ const Scatterplot = ({
 }) => {
   const xAxisRef = useRef(null);
   const yAxisRef = useRef(null);
+  const xAxisGridRef = useRef(null);
+  const yAxisGridRef = useRef(null);
   const xAxis = useRef(axisBottom().tickValues([0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]));
   const yAxis = useRef(axisLeft().tickValues([0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]));
+  const xAxisGrid = useRef(
+    axisBottom()
+      .tickValues([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
+      .tickSize(-height + margin.top + margin.bottom)
+      .tickFormat('')
+  );
+  const yAxisGrid = useRef(
+    axisLeft()
+      .tickValues([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
+      .tickSize(-width + margin.left + margin.right)
+      .tickFormat('')
+  );
 
   const formattedData = useRef(formatData(data));
-
-  // const colorScale = useMemo(() => {
-  //   return scaleOrdinal(
-  //     quantize(interpolateRainbow, ((formattedData.current && formattedData.current.categories) || []).length)
-  //   );
-  // }, [formattedData.current]);
 
   const { coords, xScale, yScale } = useMemo(() => {
     const x = scaleLinear()
@@ -79,17 +100,13 @@ const Scatterplot = ({
       .domain([0, 100])
       .range([height - margin.bottom, margin.top]);
 
-    const colorScale = scaleOrdinal(
-      quantize(interpolateRainbow, ((formattedData.current && formattedData.current.categories) || []).length)
-    );
-
     const newCoords = ((formattedData.current && formattedData.current.data) || []).map(
       ({
  category, experience, interest, name      }) => ({
         transform: `translate(${x(interest)}, ${y(experience)})`,
         name,
         id: formatId(category, name),
-        stroke: colorScale(formattedData.current.categoryIndexMap[category]),
+        stroke: formattedData.current.categoryColorMap[category], // colorScale(formattedData.current.categoryColorMap[category])
       })
     );
 
@@ -101,19 +118,25 @@ const Scatterplot = ({
     select(xAxisRef.current).call(xAxis.current);
     yAxis.current.scale(yScale);
     select(yAxisRef.current).call(yAxis.current);
+    xAxisGrid.current.scale(xScale);
+    select(xAxisGridRef.current).call(xAxisGrid.current);
+    yAxisGrid.current.scale(yScale);
+    select(yAxisGridRef.current).call(yAxisGrid.current);
   }, [xScale, yScale]);
 
   return (
     <svg viewBox={[0, 0, width, height]} className={className}>
+      <Grid ref={xAxisGridRef} transform={`translate(0,${height - margin.bottom})`} />
+      <Grid ref={yAxisGridRef} transform={`translate(${margin.left}, 0)`} />
       <Coords strokeWidth="1.5">
         {coords.map(({
- id, name, stroke, transform        }) => (
-       <g transform={transform} key={id}>
-       <circle r={3} fill="none" stroke={stroke} />
-       <text dy="0.35em" x={7}>
-                  {name}
-                </text>
-       </g>
+ id, name, stroke, transform         }) => (
+  <g transform={transform} key={id}>
+            <circle r={3} fill="none" stroke={stroke} />
+            <text dy="0.35em" x={7}>
+                                      {name}
+            </text>
+          </g>
         ))}
       </Coords>
       <Axis ref={xAxisRef} transform={`translate(0, ${height - margin.bottom})`} />
@@ -134,11 +157,11 @@ const Scatterplot = ({
 };
 
 const ScatterplotDataShape = PropTypes.shape({
-  categories: PropTypes.arrayOf(PropTypes.string).isRequired,
+  categories: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.object])).isRequired,
   data: PropTypes.arrayOf(
     PropTypes.shape({
       category: PropTypes.string.isRequired,
-      categorySecondary: PropTypes.string,
+      categorySecondary: PropTypes.string, // currently unused
       experience: PropTypes.number.isRequired,
       interest: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,

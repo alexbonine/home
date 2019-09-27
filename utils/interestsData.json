@@ -1,5 +1,10 @@
 {
-  "categories": ["Front-end", "Back-End", "Languages", "Other"],
+  "categories": [
+    { "name": "Front-end", "color": "green" },
+    { "name": "Back-end", "color": "red" },
+    { "name": "Languages", "color": "teal" },
+    { "name": "Other", "color": "purple" }
+  ],
   "data": [
     {
       "category": "Back-end",

@@ -2,7 +2,54 @@
   "name": "skills",
   "children": [
     {
+      "name": "Back-end",
+      "color": "red",
+      "children": [
+        {
+          "name": "Node",
+          "children": [
+            {
+              "name": "Next",
+              "value": 200,
+              "proficiency": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 20]
+            },
+            {
+              "name": "Nuxt",
+              "value": 700,
+              "proficiency": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 30, 60]
+            },
+            {
+              "name": "Express",
+              "value": 1000,
+              "proficiency": [0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 20, 40, 60]
+            },
+            {
+              "name": "GraphQL",
+              "value": 50,
+              "proficiency": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5]
+            }
+          ]
+        },
+        {
+          "name": "MySql",
+          "value": 50,
+          "proficiency": [0, 0, 0, 0, 0, 15, 15, 15, 10, 10, 10, 15, 20]
+        },
+        {
+          "name": "C#.NET",
+          "value": 40,
+          "proficiency": [0, 0, 0, 0, 10, 30, 40, 40, 30, 0, 0, 0, 0]
+        },
+        {
+          "name": "Google Cloud",
+          "value": 10,
+          "proficiency": [0, 0, 0, 0, 0, 0, 0, 0, 20, 10, 0, 0, 0]
+        }
+      ]
+    },
+    {
       "name": "Front-end",
+      "color": "green",
       "children": [
         {
           "name": "Frameworks",
@@ -67,52 +114,8 @@
       ]
     },
     {
-      "name": "Back-end",
-      "children": [
-        {
-          "name": "Node",
-          "children": [
-            {
-              "name": "Next",
-              "value": 200,
-              "proficiency": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 20]
-            },
-            {
-              "name": "Nuxt",
-              "value": 700,
-              "proficiency": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 30, 60]
-            },
-            {
-              "name": "Express",
-              "value": 1000,
-              "proficiency": [0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 20, 40, 60]
-            },
-            {
-              "name": "GraphQL",
-              "value": 50,
-              "proficiency": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5]
-            }
-          ]
-        },
-        {
-          "name": "MySql",
-          "value": 50,
-          "proficiency": [0, 0, 0, 0, 0, 15, 15, 15, 10, 10, 10, 15, 20]
-        },
-        {
-          "name": "C#.NET",
-          "value": 40,
-          "proficiency": [0, 0, 0, 0, 10, 30, 40, 40, 30, 0, 0, 0, 0]
-        },
-        {
-          "name": "Google Cloud",
-          "value": 10,
-          "proficiency": [0, 0, 0, 0, 0, 0, 0, 0, 20, 10, 0, 0, 0]
-        }
-      ]
-    },
-    {
       "name": "Languages",
+      "color": "teal",
       "children": [
         {
           "name": "JavaScript",
@@ -153,6 +156,7 @@
     },
     {
       "name": "Other",
+      "color": "purple",
       "children": [
         {
           "name": "Project Mmgt",

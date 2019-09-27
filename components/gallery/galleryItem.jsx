@@ -32,7 +32,7 @@ const Subtitle = styled.div`
   color: ${Colors.green};
 `;
 
-const Link = styled.a`
+const LearnMore = styled.p`
   color: ${Colors.purple};
   z-index: 2;
   text-align: center;
@@ -47,6 +47,7 @@ const Link = styled.a`
 
 const Item = styled.div`
   position: relative;
+  display: block;
   /* background-size: cover;
   background-position: center center; */
   width: ${({ itemWidth }) => `${itemWidth}px`};
@@ -72,23 +73,30 @@ const Item = styled.div`
       top: 24%;
     }
 
-    ${Link} {
+    ${LearnMore} {
       opacity: 1;
       bottom: 24%;
     }
   }
 `;
 
-const GalleryItem = ({ image, label, link, subtitle, itemWidth }) => (
-  <Item itemWidth={itemWidth}>
-    <Image image={image} />
-    <Text>
-      <Title>{label}</Title>
-      {subtitle && <Subtitle>{subtitle}</Subtitle>}
-    </Text>
-    {link && <Link href={link}>Learn More</Link>}
-  </Item>
-);
+const GalleryItem = ({
+ image, label, link, subtitle, itemWidth 
+}) => {
+  const additionalProps = link ? { href: link, as: 'a' } : {};
+
+  return (
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    <Item itemWidth={itemWidth} {...additionalProps}>
+      <Image image={image} />
+      <Text>
+        <Title>{label}</Title>
+        {subtitle && <Subtitle>{subtitle}</Subtitle>}
+      </Text>
+      {link && <LearnMore>Learn More</LearnMore>}
+    </Item>
+  );
+};
 
 // export const GalleryItemPropType = PropTypes.shape({
 //   category: PropTypes.arrayOf(PropTypes.string),

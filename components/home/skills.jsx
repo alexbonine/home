@@ -23,7 +23,7 @@ const SkillsButtons = [
   { id: SkillsButtonsIds.timeline, text: 'Over Time' },
 ];
 
-const ChartMaxHeight = '543px';
+const ChartMaxHeight = '510px';
 const DefaultLineWidth = 600;
 
 const SkillsContainer = styled.div`
@@ -152,8 +152,7 @@ const Skills = () => {
                   )}
                 </SkillsWrapper>
               </AnimatedDiv>
-            )
-          )}
+            ))}
         </ChartsContainer>
       </SkillsContainer>
     </Panel>

@@ -54,6 +54,19 @@ const getBreadcrumbTrail = (node) => {
   return trail;
 };
 
+const getColor = (node, colorScale) => {
+  let colorNode = node;
+  while (colorNode.depth > 1) {
+    colorNode = colorNode.parent;
+  }
+
+  if (colorNode.data.color && Colors.grid.hasOwnProperty(colorNode.data.color)) {
+    return Colors.grid[colorNode.data.color];
+  }
+
+  return colorScale(colorNode.data.name);
+};
+
 const Sunburst = ({ data, setBreadcrumbs }) => {
   const svgRef = useRef(null);
   const g1Ref = useRef(null);
@@ -64,7 +77,7 @@ const Sunburst = ({ data, setBreadcrumbs }) => {
     (node, color) => {
       const breadcrumbs = getBreadcrumbTrail(node);
       setBreadcrumbs(breadcrumbs, color);
-      for (let i = 0; i < svgRef.current.children[0].children.length; i++) {
+      for (let i = 0; i < svgRef.current.children[0].children.length; i += 1) {
         const child = svgRef.current.children[0].children[i];
 
         if (breadcrumbs.indexOf(child.dataset.name) >= 0) {
@@ -104,11 +117,7 @@ const Sunburst = ({ data, setBreadcrumbs }) => {
         .descendants()
         .filter((d) => d.depth)
         .map((node) => {
-          let colorNode = node;
-          while (colorNode.depth > 1) {
-            colorNode = colorNode.parent;
-          }
-          const color = colorScale(colorNode.data.name);
+          const color = getColor(node, colorScale);
           const title = `${node
             .ancestors()
             .map((d) => d.data.name)
@@ -132,11 +141,7 @@ const Sunburst = ({ data, setBreadcrumbs }) => {
         .descendants()
         .filter((d) => d.depth && ((d.y0 + d.y1) / 2) * (d.x1 - d.x0) > 10)
         .map((node) => {
-          let colorNode = node;
-          while (colorNode.depth > 1) {
-            colorNode = colorNode.parent;
-          }
-          const color = colorScale(colorNode.data.name);
+          const color = getColor(node, colorScale);
           const x = (((node.x0 + node.x1) / 2) * 180) / Math.PI;
           const y = (node.y0 + node.y1) / 2;
           const transform = `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
@@ -153,7 +158,9 @@ const Sunburst = ({ data, setBreadcrumbs }) => {
 
   useEffect(() => {
     if (svgRef.current) {
-      const { x, y, width, height       } = svgRef.current.getBBox();
+      const {
+ x, y, width, height 
+} = svgRef.current.getBBox();
       svgRef.current.setAttribute('viewBox', `${x},${y},${width},${height}`);
     }
 
@@ -167,15 +174,17 @@ const Sunburst = ({ data, setBreadcrumbs }) => {
   return (
     <SunburstSvg ref={svgRef} className="sunburst" onMouseLeave={mouseleave}>
       <g ref={g1Ref} fillOpacity=".6">
-        {pieSlices.map(({ color, d, name, onMouseOver, title }) => (
-           <path d={d} data-name={name} fill={color} key={`pie-${title}`} onMouseOver={onMouseOver} title={title} />
+        {pieSlices.map(({
+ color, d, name, onMouseOver, title         }) => (
+  <path d={d} data-name={name} fill={color} key={`pie-${title}`} onMouseOver={onMouseOver} title={title} />
         ))}
       </g>
       <g ref={g2Ref} pointerEvents="none" textAnchor="middle">
-        {textSlices.map(({ dy, text, onMouseOver, transform }) => (
-           <text dy={dy} data-name={text} key={`text-${text}`} onMouseOver={onMouseOver} transform={transform}>
-    {text}
-  </text>
+        {textSlices.map(({
+ dy, text, onMouseOver, transform         }) => (
+  <text dy={dy} data-name={text} key={`text-${text}`} onMouseOver={onMouseOver} transform={transform}>
+            {text}
+          </text>
         ))}
       </g>
     </SunburstSvg>

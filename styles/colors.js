@@ -13,6 +13,14 @@ const external = {
   linkedin: '#4875b4',
 };
 
+const grid = {
+  green: '#AFF05B',
+  orange: '#FF8C38',
+  purple: '#6E40AA',
+  red: '#FF5E63', // #FA8072
+  teal: '#1AC7C2',
+};
+
 export default {
   backgroundDark: green,
   backgroundLight: grayLight,
@@ -24,6 +32,7 @@ export default {
   grayLight,
   green,
   greenDark,
+  grid,
   purple,
   textDark: black,
   textLight: white,
