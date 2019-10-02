@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PortfolioItem from './portfolioItem';
 import PortfolioChild from './portfolioChild';
-import { PortfolioChildLi, PortfolioChildP, PortfolioChildUl } from './common';
+import PortfolioDescription from './portfolioDescription';
+import { PortfolioChildLi, PortfolioChildUl } from './common';
 
 const skills = ['React', 'Redux', 'JavaScript', 'ES6', 'HTML', 'CSS', 'Project Mgmt', 'Sass', 'Webpack', 'NPM', 'Git'];
 
@@ -32,17 +33,17 @@ const Marketo = ({ isFirst, isLast }) => (
       images={images}
       itemId="marketo"
       subtitle="Staff Front-end Engineer"
-      skills={skills}
       title="Marketo"
       titleLink="http://www.marketo.com"
-    >
-      <PortfolioChildP>
-        Following the purchase of ToutApp by Marketo, ToutApp operated as a separate entity within Marketo. We continued
+    />
+    <PortfolioDescription
+      itemId="marketo"
+      skills={skills}
+      summary="Following the purchase of ToutApp by Marketo, ToutApp operated as a separate entity within Marketo. We continued
         to maintain our own codebase and website. I was the lead front-end engineer, who beyond my normal scope of work
         was responsible for code structure, coding standards, and architecture decisions as we integrated Marketo
-        styling, added teams in Ukraine & India, and internationalized our application in five languages.
-      </PortfolioChildP>
-      <br />
+        styling, added teams in Ukraine & India, and internationalized our application in five languages."
+    >
       <PortfolioChildUl>
         <PortfolioChildLi>
           Continued the architecture and implementation of React + Redux front-end and common UI component library as
@@ -61,7 +62,7 @@ const Marketo = ({ isFirst, isLast }) => (
           architecture choice to serve six languages.
         </PortfolioChildLi>
       </PortfolioChildUl>
-    </PortfolioChild>
+    </PortfolioDescription>
   </PortfolioItem>
 );
 

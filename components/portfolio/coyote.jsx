@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PortfolioItem from './portfolioItem';
 import PortfolioChild from './portfolioChild';
-import { PortfolioChildLi, PortfolioChildP, PortfolioChildUl } from './common';
+import PortfolioDescription from './portfolioDescription';
+import { PortfolioChildLi, PortfolioChildUl } from './common';
 
 const skills = ['JavaScript', 'C#.NET', 'PhoneGap', 'AngularJS', 'BackboneJS', 'jQuery', 'Android', 'iOS', 'Ionic'];
 
@@ -41,18 +42,18 @@ const Coyote = ({ isFirst, isLast }) => (
       images={images}
       itemId="coyote"
       subtitle="Mobile & Web App Developer"
-      skills={skills}
       title="Coyote Logistics"
       titleLink="http://www.coyote.com"
+    />
+    <PortfolioDescription
+      itemId="coyote"
+      skills={skills}
+      summary="Upon joining Coyote Logistics as a general developer, I helped start the mobile development team as I had
+      self-taught Android experience creating apps. After prototyping different frameworks, we settled on PhoneGap to
+      allow our small team to develop cross-platform hybrid mobile apps for both Android and IOS. Alongside our mobile
+      work, our team worked on features for the main webapp built using Backbone and Handlebars on the front-end with
+      C# and .NET on the back-end."
     >
-      <PortfolioChildP>
-        Upon joining Coyote Logistics as a general developer, I helped start the mobile development team as I had
-        self-taught Android experience creating apps. After prototyping different frameworks, we settled on PhoneGap to
-        allow our small team to develop cross-platform hybrid mobile apps for both Android and IOS. Alongside our mobile
-        work, our team worked on features for the main webapp built using Backbone and Handlebars on the front-end with
-        C# and .NET on the back-end.
-      </PortfolioChildP>
-      <br />
       <PortfolioChildUl>
         <PortfolioChildLi>
           Led full stack development of CoyoteGO, a hybrid mobile check-in application for commercial drivers to find
@@ -67,7 +68,7 @@ const Coyote = ({ isFirst, isLast }) => (
         </PortfolioChildLi>
         <PortfolioChildLi>Collaborated on customer-facing single page app as full-stack developer.</PortfolioChildLi>
       </PortfolioChildUl>
-    </PortfolioChild>
+    </PortfolioDescription>
   </PortfolioItem>
 );
 

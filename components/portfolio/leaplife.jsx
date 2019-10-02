@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PortfolioItem from './portfolioItem';
 import PortfolioChild from './portfolioChild';
-import { PortfolioChildLi, PortfolioChildP, PortfolioChildUl } from './common';
+import PortfolioDescription from './portfolioDescription';
+import { PortfolioChildLi, PortfolioChildUl } from './common';
 
 const skills = [
   'Vue',
@@ -43,16 +44,16 @@ const Leaplife = ({ isFirst, isLast }) => (
       images={images}
       itemId="leaplife"
       subtitle="Head of Engineering, Lead Software Engineer"
-      skills={skills}
       title="LeapLife Insurance"
       titleLink="https://www.leaplife.com"
-    >
-      <PortfolioChildP>
-        Originally brought in to architect the front-end, I have had an effect on the entire codebase. From crafting a
+    />
+    <PortfolioDescription
+      itemId="leaplife"
+      skills={skills}
+      summary="Originally brought in to architect the front-end, I have had an effect on the entire codebase. From crafting a
         website server-side rendering Vue UI components or multiple scoring and recommendation engines, I have been the
-        entire LeapLife experience.
-      </PortfolioChildP>
-      <br />
+        entire LeapLife experience."
+    >
       <PortfolioChildUl>
         <PortfolioChildLi>
           Architected Vue + Nuxt server-side rendered front-end web app utilizing common UI component best practices,
@@ -75,7 +76,7 @@ const Leaplife = ({ isFirst, isLast }) => (
         </PortfolioChildLi>
         <PortfolioChildLi>Worked with marketing and partners to supply recommended quotes as API.</PortfolioChildLi>
       </PortfolioChildUl>
-    </PortfolioChild>
+    </PortfolioDescription>
   </PortfolioItem>
 );
 

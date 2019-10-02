@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PortfolioItem from './portfolioItem';
 import PortfolioChild from './portfolioChild';
-import { PortfolioChildLi, PortfolioChildP, PortfolioChildUl } from './common';
+import PortfolioDescription from './portfolioDescription';
+import { PortfolioChildLi, PortfolioChildUl } from './common';
 
 const skills = ['C++', 'C', 'Embedded Systems', 'Project Mgmt', 'Satellite Communication', 'Subversion'];
 
@@ -19,15 +20,16 @@ const RockwellCollins = ({ isFirst, isLast }) => (
       images={images}
       itemId="rockwell-collins"
       subtitle="Software Engineer"
-      skills={skills}
       title="Rockwell Collins"
       titleLink="http://www.rockwellcollins.com"
+    />
+    <PortfolioDescription
+      itemId="rockwell-collins"
+      skills={skills}
+      summary="Led a multi-disciplinary team as Software Lead and Cost Account Manager to add full-duplex functionality to
+        satellite communication (SATCOM) waveforms utilized on SwISS AMF radio project. Four years of diversified experience throughout the software development life-cycle working with SATCOM software
+        systems for the fifth generation of ARC-210 radios."
     >
-      <PortfolioChildP>
-        Led a multi-disciplinary team as Software Lead and Cost Account Manager to add full-duplex functionality to
-        satellite communication (SATCOM) waveforms utilized on SwISS AMF radio project.
-      </PortfolioChildP>
-      <br />
       <PortfolioChildUl>
         <PortfolioChildLi>
           Documented project from requirements phase through software development plan.
@@ -38,14 +40,6 @@ const RockwellCollins = ({ isFirst, isLast }) => (
         <PortfolioChildLi>
           Delivered presentations to the customer and reported project status to program management
         </PortfolioChildLi>
-      </PortfolioChildUl>
-      <br />
-      <PortfolioChildP>
-        Four years of diversified experience throughout the software development life-cycle working with SATCOM software
-        systems for the fifth generation of ARC-210 radios.
-      </PortfolioChildP>
-      <br />
-      <PortfolioChildUl>
         <PortfolioChildLi>
           Successfully took software from requirements phase through design, implementation, integration, and testing
           phases.
@@ -60,7 +54,7 @@ const RockwellCollins = ({ isFirst, isLast }) => (
           systems across the radio.
         </PortfolioChildLi>
       </PortfolioChildUl>
-    </PortfolioChild>
+    </PortfolioDescription>
   </PortfolioItem>
 );
 

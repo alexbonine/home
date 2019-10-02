@@ -18,6 +18,9 @@ const Container = styled.div`
 const TextContainer = styled.div`
   flex: 1 1 auto;
   margin-bottom: ${App.full};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   ${mqDesktop} {
     margin-bottom: 0;
@@ -36,49 +39,48 @@ const TitleLink = Title.withComponent('a');
 const Subtitle = styled.h5`
   font-size: 20px;
   font-style: italic;
-  padding-top: ${App.half};
+  padding-top: ${App.full};
   /* font-weight: 500; */
 `;
 
 const Description = styled.p`
   font-size: 20px;
-  padding-top: ${App.full};
-`;
-
-const Skills = styled.p`
-  font-size: 20px;
-  padding-top: ${App.full};
-  font-style: italic;
+  padding-top: ${App.double};
 `;
 
 const DividingLine = styled.div`
-  margin: ${App.full};
-  height: 1px;
-  background-color: ${Colors.white};
+  margin: ${App.full} 0 0 0;
+
+  ${mqDesktop} {
+    margin: ${App.full} ${App.full} 0 ${App.full};
+    height: 1px;
+    background-color: ${Colors.white};
+  }
 `;
 
-const PortfolioChild = ({ children, description, images, itemId, subtitle, skills, title, titleLink }) => (
+const PortfolioChild = ({ description, images, itemId, subtitle, title, titleLink }) => (
   <Container id={itemId}>
     <TextContainer>
-      {titleLink ? (
-        <TitleLink href={titleLink} target="_blank">
-          {title}
-        </TitleLink>
-      ) : (
-        <Title>{title}</Title>
-      )}
-      {subtitle && <Subtitle>{subtitle}</Subtitle>}
-      {description && <Description>{description}</Description>}
-      {skills.length > 0 && <Skills>Skills: {skills.join(', ')}</Skills>}
+      <div>
+        {titleLink ? (
+          <TitleLink href={titleLink} target="_blank">
+            {title}
+          </TitleLink>
+        ) : (
+          <Title>{title}</Title>
+        )}
+        {subtitle && <Subtitle>{subtitle}</Subtitle>}
+        {description && <Description>{description}</Description>}
+      </div>
       <DividingLine />
-      {children}
+      {/* {skills.length > 0 && <Skills>Skills: {skills.join(', ')}</Skills>} */}
+      {/* {children} */}
     </TextContainer>
     <Carousel css={{ flexShrink: 0 }} images={images} />
   </Container>
 );
 
 PortfolioChild.propTypes = {
-  children: PropTypes.node.isRequired,
   description: PropTypes.string,
   images: PropTypes.arrayOf(CarouselImageShape),
   itemId: PropTypes.string.isRequired,

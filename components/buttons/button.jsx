@@ -28,8 +28,8 @@ const activeGrayClass = css`
 
 const disabledHoverClass = css`
   &:hover {
-    background: $gray;
-    color: $white;
+    background: ${Colors.gray};
+    /* color: ${Colors.white}; */
     cursor: auto;
   }
 `;
@@ -58,12 +58,12 @@ const ButtonStyling = ({ color, disabled, minWidth }) => {
   const defaultStyling = { minWidth: `${minWidth}px` };
   const disabledStyling = disabled
     ? {
-        cursor: 'auto',
-        boxShadow: 'none',
-        opacity: 0.6,
-        background: Colors.gray,
-        border: `1px solid ${Colors.gray}`,
-      }
+      cursor: 'auto',
+      boxShadow: 'none',
+      opacity: 0.6,
+      background: Colors.gray,
+      border: `1px solid ${Colors.gray}`,
+    }
     : {};
 
   switch (color) {
@@ -121,7 +121,9 @@ const ButtonComponent = styled.button(
   ButtonStyling
 );
 
-const Button = ({ children, className, clickDelay, color, disabled, id, minWidth, onClick, text }) => {
+const Button = ({
+ children, className, clickDelay, color, disabled, id, minWidth, onClick, text 
+}) => {
   const [delayTimeout, setDelayTimeout] = useState(null);
   useEffect(() => () => {
     if (delayTimeout) {

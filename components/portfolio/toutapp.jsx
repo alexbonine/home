@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PortfolioItem from './portfolioItem';
 import PortfolioChild from './portfolioChild';
-import { PortfolioChildLi, PortfolioChildP, PortfolioChildUl } from './common';
+import PortfolioDescription from './portfolioDescription';
+import { PortfolioChildLi, PortfolioChildUl } from './common';
 
 const skills = ['React', 'Redux', 'JavaScript', 'ES6', 'HTML', 'CSS', 'Sass', 'Webpack', 'NPM', 'Git'];
 
@@ -31,18 +32,18 @@ const Toutapp = ({ isFirst, isLast }) => (
       images={images}
       itemId="toutapp"
       subtitle="Senior Front-end Engineer, Front-end Engineer"
-      skills={skills}
       title="ToutApp"
       titleLink="http://www.toutapp.com"
-    >
-      <PortfolioChildP>
-        As one of the first-dedicated front-end engineers, I was responsible for architecting and implementing React
+    />
+    <PortfolioDescription
+      itemId="toutapp"
+      skills={skills}
+      summary="As one of the first-dedicated front-end engineers, I was responsible for architecting and implementing React
         within the legacy BackboneJS webapp. Originally brought in to architect the front-end, I have had an effect on
         the entire codebase. Proving out React in a complete Gmail Chrome extension re-write, a common UI component
         library allowed fast integration in an OWA extension before slowly replacing all features within the main
-        webapp.
-      </PortfolioChildP>
-      <br />
+        webapp."
+    >
       <PortfolioChildUl>
         <PortfolioChildLi>
           Architected and led adoption of React + Redux front-end and common UI component library.
@@ -57,7 +58,7 @@ const Toutapp = ({ isFirst, isLast }) => (
         </PortfolioChildLi>
         <PortfolioChildLi>Proved out common components architecture by creating Outlook Web add-in.</PortfolioChildLi>
       </PortfolioChildUl>
-    </PortfolioChild>
+    </PortfolioDescription>
   </PortfolioItem>
 );
 
