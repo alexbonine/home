@@ -7,25 +7,22 @@ const RadioButtonsComponent = styled.div`
   display: flex;
 `;
 
-const RadioButtons = ({
- buttons, defaultColor, disabled, onClick, selected, selectedColor 
-}) => {
+const RadioButtons = ({ buttons, defaultColor, disabled, onClick, selected, selectedColor }) => {
   const callbacks = useMemo(() => buttons.map(({ id }) => () => onClick(id)), [buttons]);
 
   return (
     <RadioButtonsComponent disabled={disabled}>
-      {buttons.map(({
- children, disabled: buttonDisabled, id, text 
-}, index) => (
-              <Button
-          children={children}
+      {buttons.map(({ children, disabled: buttonDisabled, id, text }, index) => (
+        <Button
           color={selected === id ? selectedColor : defaultColor}
-    disabled={buttonDisabled}
+          disabled={buttonDisabled}
           id={id}
           key={`radio-${id}`}
           onClick={callbacks[index]}
-    text={text}
-  />
+          text={text}
+        >
+          {children}
+        </Button>
       ))}
     </RadioButtonsComponent>
   );

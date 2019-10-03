@@ -80,9 +80,7 @@ const Item = styled.div`
   }
 `;
 
-const GalleryItem = ({
- image, label, link, subtitle, itemWidth 
-}) => {
+const GalleryItem = ({ image, label, link, subtitle, itemWidth }) => {
   const additionalProps = link ? { href: link, as: 'a' } : {};
 
   return (
@@ -105,7 +103,7 @@ const GalleryItem = ({
 //   link: PropTypes.string,
 // });
 
-GalleryItem.propTypes = {
+const GalleryItemPropTypes = {
   image: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   link: PropTypes.string,
@@ -113,10 +111,14 @@ GalleryItem.propTypes = {
   itemWidth: PropTypes.number,
 };
 
+GalleryItem.propTypes = GalleryItemPropTypes;
+
 GalleryItem.defaultProps = {
   link: '',
   subtitle: '',
   itemWidth: 400,
 };
+
+export const GalleryItemShape = PropTypes.shape(GalleryItemPropTypes);
 
 export default GalleryItem;

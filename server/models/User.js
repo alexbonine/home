@@ -37,7 +37,7 @@ class UserClass {
     });
   }
 
-  static async findOrCreate({ yahooToken, yahooId }) {
+  static async findOrCreate({ /* yahooToken, */ yahooId }) {
     // const user = await this.findOne({ googleId }).select(UserClass.publicFields().join(' '));
 
     // if (user) {

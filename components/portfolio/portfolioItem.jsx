@@ -50,9 +50,7 @@ const ChildContainer = styled.div`
   width: 100%;
 `;
 
-const PortfolioItem = ({
- children, dateStr, isFirst, isLast 
-}) => (
+const PortfolioItem = ({ children, dateStr, isFirst, isLast }) => (
   <Container>
     <DateContainer isFirst={isFirst}>
       <DateTextContainer>

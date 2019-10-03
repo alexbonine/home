@@ -84,7 +84,6 @@ PortfolioChild.propTypes = {
   description: PropTypes.string,
   images: PropTypes.arrayOf(CarouselImageShape),
   itemId: PropTypes.string.isRequired,
-  skills: PropTypes.arrayOf(PropTypes.string),
   subtitle: PropTypes.string,
   title: PropTypes.string.isRequired,
   titleLink: PropTypes.string,
@@ -93,7 +92,6 @@ PortfolioChild.propTypes = {
 PortfolioChild.defaultProps = {
   description: '',
   images: [],
-  skills: [],
   subtitle: '',
   titleLink: '',
 };

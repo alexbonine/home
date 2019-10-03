@@ -90,21 +90,18 @@ const Sunburst = ({ data, setBreadcrumbs }) => {
     [setBreadcrumbs]
   );
 
-  const mouseleave = useCallback(
-    (e) => {
-      for (let i = 0; i < svgRef.current.children[0].children.length; i += 1) {
-        const child = svgRef.current.children[0].children[i];
-        child.style.transition = 'opacity 1000ms';
-        child.style.opacity = 1;
-      }
+  const mouseleave = useCallback(() => {
+    for (let i = 0; i < svgRef.current.children[0].children.length; i += 1) {
+      const child = svgRef.current.children[0].children[i];
+      child.style.transition = 'opacity 1000ms';
+      child.style.opacity = 1;
+    }
 
-      // removeTimeout.current = setTimeout(() => {
-      //   setBreadcrumbs([]);
-      //   removeTimeout.current = null;
-      // }, 1000);
-    },
-    [setBreadcrumbs]
-  );
+    // removeTimeout.current = setTimeout(() => {
+    //   setBreadcrumbs([]);
+    //   removeTimeout.current = null;
+    // }, 1000);
+  }, [setBreadcrumbs]);
 
   const colorScale = useMemo(() => {
     return scaleOrdinal(quantize(interpolateRainbow, data.children.length + 1));
@@ -158,9 +155,7 @@ const Sunburst = ({ data, setBreadcrumbs }) => {
 
   useEffect(() => {
     if (svgRef.current) {
-      const {
- x, y, width, height 
-} = svgRef.current.getBBox();
+      const { x, y, width, height } = svgRef.current.getBBox();
       svgRef.current.setAttribute('viewBox', `${x},${y},${width},${height}`);
     }
 
@@ -174,15 +169,28 @@ const Sunburst = ({ data, setBreadcrumbs }) => {
   return (
     <SunburstSvg ref={svgRef} className="sunburst" onMouseLeave={mouseleave}>
       <g ref={g1Ref} fillOpacity=".6">
-        {pieSlices.map(({
- color, d, name, onMouseOver, title         }) => (
-  <path d={d} data-name={name} fill={color} key={`pie-${title}`} onMouseOver={onMouseOver} title={title} />
+        {pieSlices.map(({ color, d, name, onMouseOver, title }) => (
+          <path
+            d={d}
+            data-name={name}
+            fill={color}
+            key={`pie-${title}`}
+            onMouseOver={onMouseOver}
+            onFocus={onMouseOver}
+            title={title}
+          />
         ))}
       </g>
       <g ref={g2Ref} pointerEvents="none" textAnchor="middle">
-        {textSlices.map(({
- dy, text, onMouseOver, transform         }) => (
-  <text dy={dy} data-name={text} key={`text-${text}`} onMouseOver={onMouseOver} transform={transform}>
+        {textSlices.map(({ dy, text, onMouseOver, transform }) => (
+          <text
+            dy={dy}
+            data-name={text}
+            key={`text-${text}`}
+            onMouseOver={onMouseOver}
+            onFocus={onMouseOver}
+            transform={transform}
+          >
             {text}
           </text>
         ))}

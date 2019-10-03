@@ -67,9 +67,7 @@ const formatData = ({ categories, data }) => {
   };
 };
 
-const Scatterplot = ({
- className, data, height, width 
-}) => {
+const Scatterplot = ({ className, data, height, width }) => {
   const xAxisRef = useRef(null);
   const yAxisRef = useRef(null);
   const xAxisGridRef = useRef(null);
@@ -101,8 +99,7 @@ const Scatterplot = ({
       .range([height - margin.bottom, margin.top]);
 
     const newCoords = ((formattedData.current && formattedData.current.data) || []).map(
-      ({
- category, experience, interest, name      }) => ({
+      ({ category, experience, interest, name }) => ({
         transform: `translate(${x(interest)}, ${y(experience)})`,
         name,
         id: formatId(category, name),
@@ -129,12 +126,11 @@ const Scatterplot = ({
       <Grid ref={xAxisGridRef} transform={`translate(0,${height - margin.bottom})`} />
       <Grid ref={yAxisGridRef} transform={`translate(${margin.left}, 0)`} />
       <Coords strokeWidth="1.5">
-        {coords.map(({
- id, name, stroke, transform         }) => (
-  <g transform={transform} key={id}>
+        {coords.map(({ id, name, stroke, transform }) => (
+          <g transform={transform} key={id}>
             <circle r={3} fill="none" stroke={stroke} />
             <text dy="0.35em" x={7}>
-                                      {name}
+              {name}
             </text>
           </g>
         ))}

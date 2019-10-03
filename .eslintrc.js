@@ -6,40 +6,41 @@ module.exports = {
     es6: true,
     jest: true,
   },
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 10,
-    parser: 'babel-eslint',
   },
   extends: [
-    'eslint:recommended',
+    // 'eslint:recommended',
     'airbnb',
-    'plugin:prettier/recommended',
-    // 'prettier',
+    // 'plugin:prettier/recommended',
+    'prettier',
   ],
   plugins: ['prettier'],
   rules: {
+    'prettier/prettier': ['error'],
     'brace-style': ['warn', '1tbs'],
     curly: ['warn', 'all'],
     'no-console': 'warn',
     'no-unused-vars': ['warn', { varsIgnorePattern: '[iI]gnored', argsIgnorePattern: '^_' }],
     'no-debugger': 'warn',
-    indent: 'warn',
+    // indent: 'warn',
     semi: 'warn',
-    quotes: ['warn', 'single'],
+    // quotes: ['warn', 'single'],
     'operator-linebreak': 'off',
     'import/no-unresolved': 'off', // airbnb // off unless workaround for ~
     'import/extensions': 'off', // airbnb // off unless workaround for ~
     'max-len': 'off', // airbnb
     'dot-notation': 'off', // airbnb
     'spaced-comment': 'warn', // airbnb
-    'object-curly-newline': [
-      'warn',
-      {
-        // airbnb
-        ObjectExpression: { minProperties: 4, multiline: true, consistent: true },
-        ObjectPattern: { minProperties: 4, multiline: true, consistent: true },
-      },
-    ],
+    // 'object-curly-newline': [
+    //   'warn',
+    //   {
+    //     // airbnb
+    //     ObjectExpression: { minProperties: 4, multiline: true, consistent: true },
+    //     ObjectPattern: { minProperties: 4, multiline: true, consistent: true },
+    //   },
+    // ],
     'no-trailing-spaces': ['warn', { skipBlankLines: true }],
     'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['state', 'accum'] }], // airbnb - if change to props: false ?
     'arrow-parens': ['warn', 'always'], // airbnb
@@ -76,7 +77,7 @@ module.exports = {
     // 'arrow-body-style': 'off',
     // 'space-before-function-paren': 'off',
     'import/prefer-default-export': 'off',
-    'function-paren-newline': ['warn', 'consistent'], // airbnb 'multiline'
+    // 'function-paren-newline': ['warn', 'consistent'], // airbnb 'multiline'
     // 'yoda': 'off',
     // 'one-var': 'off',
     // 'no-plusplus': 'off',

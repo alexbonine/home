@@ -11,9 +11,7 @@ const Header = styled.div`
   flex-wrap: wrap;
 `;
 
-const GalleryHeader = ({
- all, items, onSelect, selected 
-}) => {
+const GalleryHeader = ({ all, items, onSelect, selected }) => {
   const headerItems = useMemo(() => {
     if (all) {
       return [{ label: 'All', value: All }, ...items];
@@ -37,9 +35,14 @@ const GalleryHeader = ({
   );
 };
 
+export const GalleryHeaderItemShape = PropTypes.shape({
+  label: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+});
+
 GalleryHeader.propTypes = {
   all: PropTypes.bool.isRequired,
-  items: PropTypes.array.isRequired,
+  items: PropTypes.arrayOf(GalleryHeaderItemShape).isRequired,
   onSelect: PropTypes.func.isRequired,
   selected: PropTypes.string.isRequired,
 };

@@ -16,8 +16,8 @@ const Index = () => (
 
 Index.meta = {
   description:
-    'This is the Amazing Alex Bonine\'s Bodacious website. Alex Bonine has architected multiple companies\' front-ends in React and Vue and is currently the Lead (read \'only\') Software Engineer at Leap Life.',
-  title: 'Alex Bonine\'s Amazing Website',
+    "This is the Amazing Alex Bonine's Bodacious website. Alex Bonine has architected multiple companies' front-ends in React and Vue and is currently the Lead (read 'only') Software Engineer at Leap Life.",
+  title: "Alex Bonine's Amazing Website",
 };
 
 export default Index;

@@ -152,7 +152,8 @@ const Skills = () => {
                   )}
                 </SkillsWrapper>
               </AnimatedDiv>
-            ))}
+            )
+          )}
         </ChartsContainer>
       </SkillsContainer>
     </Panel>

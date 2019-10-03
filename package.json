@@ -10,7 +10,9 @@
     "dev": "nodemon --inspect server/app.js --watch server",
     "build": "next build",
     "start": "cross-env NODE_ENV=production node server/app.js -p $PORT",
-    "prod": "npm run build & npm run start"
+    "prod": "npm run build & npm run start",
+    "lint": "eslint --ext .js,.jsx . && echo 'Lint complete.'",
+    "lint:fix": "eslint --ext .js,.jsx --fix . && echo 'Lint:fix complete.'"
   },
   "repository": {
     "type": "git",

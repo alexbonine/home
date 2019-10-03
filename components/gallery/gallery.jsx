@@ -4,8 +4,8 @@ import styled from '@emotion/styled';
 import { useTransition, animated } from 'react-spring';
 // import { css } from '@emotion/core';
 // import Colors from '../../styles/colors';
-import GalleryItem from './galleryItem';
-import GalleryHeader, { All } from './galleryHeader';
+import GalleryItem, { GalleryItemShape } from './galleryItem';
+import GalleryHeader, { All, GalleryHeaderItemShape } from './galleryHeader';
 import useMeasure from '../../hooks/useMeasure';
 import useMediaColumns from '../../hooks/useMediaColumns';
 import App from '../../styles/constants/app';
@@ -89,7 +89,7 @@ const Gallery = ({ all, headers, items }) => {
   });
 
   const transitions = useTransition(gridItems, (item) => item.key, {
-    from: ({ xy, width, height }) => ({
+    from: ({ xy, width }) => ({
       xy,
       width,
       height: 0,
@@ -111,10 +111,8 @@ const Gallery = ({ all, headers, items }) => {
     <GalleryContainer>
       <GalleryHeader all={all} items={headers} onSelect={setSelected} selected={selected} />
       <ItemContainer ref={ref} style={{ height: Math.max(...heights), width: `${columns * ItemWidth}px` }}>
-        {transitions.map(({
- item: { image, label, link, subtitle         }, props: { xy, ...rest }, key 
-}) => (
-  <AnimatedDiv
+        {transitions.map(({ item: { image, label, link, subtitle }, props: { xy, ...rest }, key }) => (
+          <AnimatedDiv
             key={key}
             style={{ transform: xy.interpolate((x, y) => `translate3d(${x}px,${y}px,0)`), ...rest }}
           >
@@ -128,8 +126,8 @@ const Gallery = ({ all, headers, items }) => {
 
 Gallery.propTypes = {
   all: PropTypes.bool,
-  headers: PropTypes.array.isRequired,
-  items: PropTypes.array.isRequired,
+  headers: PropTypes.arrayOf(GalleryHeaderItemShape).isRequired,
+  items: PropTypes.arrayOf(GalleryItemShape).isRequired,
 };
 
 Gallery.defaultProps = {

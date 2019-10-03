@@ -48,7 +48,7 @@ const PanelChild = styled.div(
     display: 'flex',
     flexDirection: 'column',
   },
-  ({ centerHorizontal, centerVertical, fullHeight, fullWidth   }) => ({
+  ({ centerHorizontal, centerVertical, fullHeight, fullWidth }) => ({
     alignItems: (centerHorizontal && 'center') || undefined,
     justifyContent: (centerVertical && 'center') || undefined,
     flex: (fullHeight && '1 1 auto') || undefined,

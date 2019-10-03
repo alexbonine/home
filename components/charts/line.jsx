@@ -65,9 +65,7 @@ const formatData = (data, prefix = '') => {
   return { [`${prefix}`]: data.proficiency };
 };
 
-const Line = ({
- breadcrumbs, color, data, height, width 
-}) => {
+const Line = ({ breadcrumbs, color, data, height, width }) => {
   const xAxisRef = useRef(null);
   const yAxisRef = useRef(null);
   const xAxis = useRef(
@@ -79,12 +77,6 @@ const Line = ({
   const breadcrumbName = getBreadcrumbName(breadcrumbs);
 
   const formattedData = useRef(formatData(data));
-
-  // const colorScale = useMemo(() => {
-  //   return d3.scaleOrdinal(
-  //     d3.quantize(d3.interpolateRainbow, data.children.length + 1)
-  //   );
-  // }, [data]);
 
   const { xScale, yScale, lineDrawer } = useMemo(() => {
     const x = scaleLinear()
@@ -116,20 +108,13 @@ const Line = ({
 
   const lines = formattedData.current[breadcrumbName]
     ? [
-      {
-        d: lineDrawer(formattedData.current[breadcrumbName]),
-        id: breadcrumbName,
-        stroke: color, // colorScale(1), // based on lines showing
-      },
-    ]
+        {
+          d: lineDrawer(formattedData.current[breadcrumbName]),
+          id: breadcrumbName,
+          stroke: color,
+        },
+      ]
     : [];
-
-  // console.log(formattedData[breadcrumbName]);
-  // console.log(
-  //   breadcrumbName,
-  //   formattedData.current,
-  //   formattedData.current[breadcrumbName]
-  // );
 
   return (
     <svg width={width} height={height}>
