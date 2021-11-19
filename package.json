@@ -58,6 +58,7 @@
     "resize-observer-polyfill": "^1.5.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.0",
     "@emotion/babel-preset-css-prop": "^10.0.14",
     "babel-eslint": "^10.0.2",
     "babel-plugin-emotion": "^10.0.15",
