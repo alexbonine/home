@@ -46,18 +46,23 @@ const formatData = (data, prefix = '') => {
         ...formatData(child, `${prefix}${prefix.length ? '.' : ''}${formatBreadcrumbName(child.name)}`),
       };
     }, {});
-    const childKeys = Object.keys(childrenData);
-    const totals = childKeys.reduce(
-      (accum, childName) => {
-        for (let i = 0; i < accum.length; i += 1) {
-          accum[i] += childrenData[childName][i];
-        }
 
-        return accum;
-      },
-      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    );
-    childrenData[prefix] = totals.map((total) => Math.round(total / childKeys.length)); // todo use by %?
+    if (data.proficiency) {
+      childrenData[prefix] = data.proficiency;
+    } else {
+      const childKeys = Object.keys(childrenData);
+      const totals = childKeys.reduce(
+        (accum, childName) => {
+          for (let i = 0; i < accum.length; i += 1) {
+            accum[i] += childrenData[childName][i];
+          }
+
+          return accum;
+        },
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      );
+      childrenData[prefix] = totals.map((total) => Math.round(total / childKeys.length));
+    }
 
     return childrenData;
   }

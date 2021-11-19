@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
@@ -9,8 +10,6 @@ const next = require('next');
 // const helmet = require('helmet');
 const api = require('./api');
 const auth = require('./auth');
-
-require('dotenv').config();
 
 const portArgIndex = [...process.argv].findIndex((arg) => arg === '-p') + 1;
 const port = parseInt(process.argv[portArgIndex] || process.env.PORT, 10) || 3000;

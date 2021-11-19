@@ -105,6 +105,7 @@ const galleryItems = [
   {
     categories: [GalleryItemIds.mobile],
     image: '/static/img/portfolio/coyote/go-login-graphic-400.png',
+    imageLabel: 'CoyoteGO',
     label: 'Driver Check-in App',
     link: '/portfolio#coyote',
     subtitle: 'PhoneGap & Web',
@@ -112,6 +113,7 @@ const galleryItems = [
   {
     categories: [GalleryItemIds.mobile],
     image: '/static/img/portfolio/coyote/go-load-graphic-400.png',
+    imageLabel: 'CoyoteGO',
     label: 'Driver Check-in App',
     link: '/portfolio#coyote',
     subtitle: 'PhoneGap & Web',
@@ -119,6 +121,7 @@ const galleryItems = [
   {
     categories: [GalleryItemIds.mobile],
     image: '/static/img/portfolio/coyote/bazmo-employee-graphic-400.png',
+    imageLabel: 'BazMo',
     label: 'Employee App',
     link: '/portfolio#coyote',
     subtitle: 'Angular & PhoneGap',

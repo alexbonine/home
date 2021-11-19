@@ -297,7 +297,7 @@ const Glitch = styled.div`
   }
 `;
 
-export default () => (
+const GlitchImage = () => (
   <GlitchContainer>
     <Glitch />
     <Glitch />
@@ -306,3 +306,5 @@ export default () => (
     <Glitch />
   </GlitchContainer>
 );
+
+export default GlitchImage;

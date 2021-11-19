@@ -12,6 +12,7 @@ import App from '../../styles/constants/app';
 import { flexColumn, flexFull, flexShrinkNone, fullWidth } from '../../styles/flex';
 import { MQBreakpoints, mqDesktop, mqTablet } from '../../styles/screenSize';
 import useMeasure from '../../hooks/useMeasure';
+import Colors from '../../styles/colors';
 
 const SkillsButtonsIds = {
   interests: 'interests-radio',
@@ -43,6 +44,7 @@ const AnimatedDiv = styled(animated.div)`
   width: 100%;
   height: 100%;
   position: absolute;
+  text-align: center;
 `;
 
 const SkillsWrapper = styled.div`
@@ -70,6 +72,18 @@ const LineContainer = styled.div`
   flex: 1 1 auto;
   display: flex;
   justify-content: flex-end;
+  position: relative;
+`;
+
+const EmptyText = styled.div`
+  font-size: 1.5rem;
+  color: ${Colors.white};
+  position: absolute;
+  width: 45%;
+  opacity: 0.65;
+  top: 34%;
+  left: 40%;
+  text-align: center;
 `;
 
 const Skills = () => {
@@ -142,6 +156,7 @@ const Skills = () => {
                   <Sunburst css={[flexShrinkNone]} data={data} setBreadcrumbs={setBreadcrumbs} />
                   {lineWidth > 0 && (
                     <LineContainer>
+                      {!state.breadcrumbs.length && <EmptyText>Hover over a skill in the sunburst chart</EmptyText>}
                       <Line
                         breadcrumbs={state.breadcrumbs}
                         color={state.breadcrumbsColor}

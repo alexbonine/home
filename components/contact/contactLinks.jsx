@@ -33,14 +33,25 @@ const SubTitle = styled.h2`
   color: ${HomepageStyles.textMain};
 `;
 
+const PreviousVersions = styled.p`
+  color: ${HomepageStyles.textMain};
+  font-size: 20px;
+  display: block;
+  text-align: center;
+`;
+
 const ContactLink = styled.a`
   color: ${HomepageStyles.textMain};
   font-size: 32px;
-  display: block;
+  display: inline-block;
 
   &:hover {
     opacity: 0.8;
   }
+`;
+
+const PreviousVersionsLink = styled(ContactLink)`
+  font-size: 20px;
 `;
 
 const IconBar = styled.ul``;
@@ -145,6 +156,18 @@ const ContactLinks = ({ subtitle, title }) => (
           </IconGithub>
         </li>
       </IconBar>
+      <br />
+      <br />
+      <PreviousVersions>
+        See the previous versions of this site:{' '}
+        <PreviousVersionsLink href="https://alexbonine.github.io" target="_blank">
+          2017
+        </PreviousVersionsLink>{' '}
+        &{' '}
+        <PreviousVersionsLink href="https://2015.alexbonine.com/" target="_blank">
+          2015
+        </PreviousVersionsLink>
+      </PreviousVersions>
     </ContactSubcontainer>
   </ContactContainer>
 );

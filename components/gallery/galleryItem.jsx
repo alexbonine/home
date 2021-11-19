@@ -10,6 +10,16 @@ const Image = styled.div`
   height: 250px;
 `;
 
+export const ImageLabel = styled.div`
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  top: 24%;
+  left: 50%;
+  color: ${Colors.green};
+  font-size: 2rem;
+`;
+
 const Text = styled.div`
   z-index: 2;
   text-align: center;
@@ -45,11 +55,12 @@ const LearnMore = styled.p`
   font-size: 1.5em;
 `;
 
-const Item = styled.div`
+export const Item = styled.div`
   position: relative;
   display: block;
   /* background-size: cover;
   background-position: center center; */
+  background-color: ${Colors.grayLight};
   width: ${({ itemWidth }) => `${itemWidth}px`};
   /* width: 400px; */
   height: 100%;
@@ -68,6 +79,10 @@ const Item = styled.div`
       opacity: 0;
     }
 
+    ${ImageLabel} {
+      opacity: 0;
+    }
+
     ${Text} {
       opacity: 1;
       top: 24%;
@@ -80,13 +95,14 @@ const Item = styled.div`
   }
 `;
 
-const GalleryItem = ({ image, label, link, subtitle, itemWidth }) => {
+const GalleryItem = ({ image, imageLabel, label, link, subtitle, itemWidth }) => {
   const additionalProps = link ? { href: link, as: 'a' } : {};
 
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading
     <Item itemWidth={itemWidth} {...additionalProps}>
       <Image image={image} />
+      {imageLabel && <ImageLabel>{imageLabel}</ImageLabel>}
       <Text>
         <Title>{label}</Title>
         {subtitle && <Subtitle>{subtitle}</Subtitle>}
@@ -105,6 +121,7 @@ const GalleryItem = ({ image, label, link, subtitle, itemWidth }) => {
 
 const GalleryItemPropTypes = {
   image: PropTypes.string.isRequired,
+  imageLabel: PropTypes.string,
   label: PropTypes.string.isRequired,
   link: PropTypes.string,
   subtitle: PropTypes.string,
@@ -114,6 +131,7 @@ const GalleryItemPropTypes = {
 GalleryItem.propTypes = GalleryItemPropTypes;
 
 GalleryItem.defaultProps = {
+  imageLabel: '',
   link: '',
   subtitle: '',
   itemWidth: 400,

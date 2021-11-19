@@ -7,11 +7,10 @@ import Colors from '../../styles/colors';
 import App from '../../styles/constants/app';
 
 const SunburstSvg = styled.svg`
-  max-width: 100%;
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
   height: auto;
   flex-shrink: 1 1 auto;
-  margin: 5px;
   font: 16px ${App.fonts.playfair};
   font-weight: 400;
   cursor: pointer;

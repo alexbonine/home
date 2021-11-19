@@ -38,7 +38,7 @@ const images = [
 ];
 
 const Leaplife = ({ isFirst, isLast }) => (
-  <PortfolioItem dateStr="Mar 2018 - Present" isFirst={isFirst} isLast={isLast}>
+  <PortfolioItem dateStr="Mar 2018 - Pres" isFirst={isFirst} isLast={isLast}>
     <PortfolioChild
       description="LeapLife is a digital life insurance agency available everywhere in the United States. The San Francisco-based company combines leading data science, deep underwriting knowledge, and proprietary technology to match consumers with the right carrier."
       images={images}

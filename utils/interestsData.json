@@ -9,37 +9,37 @@
     {
       "category": "Back-end",
       "name": "Node",
-      "experience": 70,
-      "interest": 90
+      "experience": 80,
+      "interest": 92
     },
     {
       "category": "Back-end",
       "name": "Express",
-      "experience": 70,
+      "experience": 60,
       "interest": 70
     },
     {
       "category": "Back-end",
       "name": "Nuxt",
-      "experience": 80,
+      "experience": 70,
       "interest": 50
     },
     {
       "category": "Back-end",
       "name": "Next",
-      "experience": 40,
+      "experience": 30,
       "interest": 80
     },
     {
       "category": "Back-end",
       "name": "Databases",
-      "experience": 10,
+      "experience": 20,
       "interest": 40
     },
     {
       "category": "Back-end",
       "name": "C#.NET",
-      "experience": 40,
+      "experience": 30,
       "interest": 5
     },
     {
@@ -51,32 +51,32 @@
     {
       "category": "Front-end",
       "name": "React",
-      "experience": 70,
+      "experience": 95,
       "interest": 90
     },
     {
       "category": "Front-end",
       "name": "Vue",
-      "experience": 70,
-      "interest": 90
+      "experience": 80,
+      "interest": 60
     },
     {
       "category": "Front-end",
       "name": "Vanilla JS",
-      "experience": 70,
-      "interest": 90
+      "experience": 75,
+      "interest": 50
     },
     {
       "category": "Front-end",
       "name": "Backbone JS",
-      "experience": 70,
-      "interest": 90
+      "experience": 50,
+      "interest": 5
     },
     {
       "category": "Front-end",
       "name": "Handlebars JS",
-      "experience": 70,
-      "interest": 90
+      "experience": 20,
+      "interest": 5
     },
     {
       "category": "Front-end",
@@ -94,116 +94,116 @@
     {
       "category": "Front-end",
       "name": "Redux",
-      "experience": 70,
+      "experience": 75,
       "interest": 90
     },
     {
       "category": "Front-end",
       "name": "Webpack",
       "experience": 70,
-      "interest": 90
+      "interest": 60
     },
     {
       "category": "Front-end",
       "name": "D3.js",
-      "experience": 70,
-      "interest": 90
+      "experience": 10,
+      "interest": 70
     },
     {
       "category": "Front-end",
       "name": "jQuery",
-      "experience": 70,
-      "interest": 90
+      "experience": 40,
+      "interest": 5
     },
     {
       "category": "Front-end",
       "name": "Emotion CSS-in-JS",
-      "experience": 70,
-      "interest": 90
+      "experience": 50,
+      "interest": 80
     },
     {
       "category": "Languages",
       "name": "JavaScript",
-      "experience": 70,
-      "interest": 90
+      "experience": 90,
+      "interest": 92
     },
     {
       "category": "Languages",
       "name": "HTML",
-      "experience": 70,
+      "experience": 85,
       "interest": 90
     },
     {
       "category": "Languages",
       "name": "CSS",
-      "experience": 70,
-      "interest": 90
+      "experience": 80,
+      "interest": 85
     },
     {
       "category": "Languages",
       "name": "SASS",
-      "experience": 70,
-      "interest": 90
+      "experience": 50,
+      "interest": 50
     },
     {
       "category": "Languages",
       "name": "Python",
-      "experience": 70,
-      "interest": 90
+      "experience": 10,
+      "interest": 15
     },
     {
       "category": "Languages",
       "name": "MySQL",
-      "experience": 70,
-      "interest": 90
+      "experience": 30,
+      "interest": 50
     },
     {
       "category": "Languages",
       "name": "C#",
-      "experience": 70,
-      "interest": 90
+      "experience": 35,
+      "interest": 5
     },
     {
       "category": "Languages",
       "name": "C++",
-      "experience": 70,
-      "interest": 90
+      "experience": 25,
+      "interest": 10
     },
     {
       "category": "Other",
       "name": "Project Mmgt",
-      "experience": 70,
+      "experience": 40,
       "interest": 90
     },
     {
       "category": "Other",
       "name": "Management",
-      "experience": 70,
+      "experience": 25,
       "interest": 90
     },
     {
       "category": "Other",
       "name": "Mentoring",
-      "experience": 70,
+      "experience": 20,
       "interest": 90
     },
     {
       "category": "Other",
       "name": "Dev Tooling",
-      "experience": 70,
-      "interest": 90
+      "experience": 80,
+      "interest": 70
     },
     {
       "category": "Other",
       "name": "Code Standards",
-      "experience": 70,
-      "interest": 90
+      "experience": 65,
+      "interest": 80
     },
     {
       "category": "Other",
       "name": "Server Mgmt",
-      "experience": 70,
-      "interest": 90
+      "experience": 35,
+      "interest": 50
     }
   ]
 }

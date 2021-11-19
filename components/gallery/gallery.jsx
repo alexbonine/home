@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { useTransition, animated } from 'react-spring';
 // import { css } from '@emotion/core';
-// import Colors from '../../styles/colors';
-import GalleryItem, { GalleryItemShape } from './galleryItem';
+import GalleryItem, { GalleryItemShape, ImageLabel, Item } from './galleryItem';
 import GalleryHeader, { All, GalleryHeaderItemShape } from './galleryHeader';
 import useMeasure from '../../hooks/useMeasure';
 import useMediaColumns from '../../hooks/useMediaColumns';
 import App from '../../styles/constants/app';
+import Colors from '../../styles/colors';
 
 const ItemWidth = 400;
 
@@ -25,6 +25,17 @@ const AnimatedDiv = styled(animated.div)`
   position: absolute;
   will-change: transform, width, height, opacity;
   padding: 0;
+
+  &:nth-of-type(2) {
+    background: purple;
+    ${Item} {
+      background: ${Colors.white};
+    }
+
+    ${ImageLabel} {
+      left: 20%;
+    }
+  }
 `;
 
 const Gallery = ({ all, headers, items }) => {
@@ -70,7 +81,11 @@ const Gallery = ({ all, headers, items }) => {
 
   const [{ ref }, { width: measureWidth }] = useMeasure();
   const columns = useMediaColumns(
-    [{ query: App.mobile, value: 1 }, { query: App.tablet, value: 2 }, { query: App.desktop, value: 3 }],
+    [
+      { query: App.mobile, value: 1 },
+      { query: App.tablet, value: 2 },
+      { query: App.desktop, value: 3 },
+    ],
     1
   );
   const heights = new Array(columns).fill(0); // Each column gets a height starting with zero
@@ -111,12 +126,19 @@ const Gallery = ({ all, headers, items }) => {
     <GalleryContainer>
       <GalleryHeader all={all} items={headers} onSelect={setSelected} selected={selected} />
       <ItemContainer ref={ref} style={{ height: Math.max(...heights), width: `${columns * ItemWidth}px` }}>
-        {transitions.map(({ item: { image, label, link, subtitle }, props: { xy, ...rest }, key }) => (
+        {transitions.map(({ item: { image, imageLabel, label, link, subtitle }, props: { xy, ...rest }, key }) => (
           <AnimatedDiv
             key={key}
             style={{ transform: xy.interpolate((x, y) => `translate3d(${x}px,${y}px,0)`), ...rest }}
           >
-            <GalleryItem image={image} label={label} link={link} subtitle={subtitle} itemWidth={ItemWidth} />
+            <GalleryItem
+              image={image}
+              imageLabel={imageLabel}
+              label={label}
+              link={link}
+              subtitle={subtitle}
+              itemWidth={ItemWidth}
+            />
           </AnimatedDiv>
         ))}
       </ItemContainer>
