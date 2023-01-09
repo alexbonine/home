@@ -24,7 +24,7 @@ const ScrollContainer = styled.ul`
   flex: 1 1 auto;
 `;
 
-const Title = styled.h3`
+const Title = styled.h1`
   font-size: 48px;
   color: ${Colors.textLight};
   margin-bottom: ${App.full};

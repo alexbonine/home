@@ -5,7 +5,7 @@ import Colors from '../styles/colors';
 import App from '../styles/constants/app';
 import { mqDesktop, mqTablet } from '../styles/screenSize';
 import Panel from '../components/layouts/panel';
-import OfficeImg from '../img/alex-bonine-the-office.jpg';
+import OfficeImg from '../public/img/alex-bonine-the-office.jpg';
 
 const AboutContainer = styled.div`
   max-width: ${App.maxWidth};
