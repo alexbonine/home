@@ -17,7 +17,7 @@ const Meta = ({ description, image, title }) => {
         <meta name="description" content={description} />
         <meta name="og:description" content={description} />
         <meta property="og:image" content={image} />
-        <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       </Head>
     </div>
   );

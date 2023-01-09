@@ -255,7 +255,7 @@ const Glitch = styled.div`
   left: calc(-1 * ${GlitchConstants.gapHorizontal});
   width: calc(100% + ${GlitchConstants.gapHorizontal} * 2);
   height: calc(100% + ${GlitchConstants.gapVertical} * 2);
-  background: url(/static/img/palace-of-fine-arts.jpg) no-repeat 50% 0;
+  background: url(/img/palace-of-fine-arts.jpg) no-repeat 50% 0;
   background-color: ${Constants.blendColor1};
   background-size: cover;
   transform: translate3d(0, 0, 0);

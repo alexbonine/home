@@ -7,9 +7,9 @@ import { PortfolioChildLi, PortfolioChildUl } from './common';
 const skills = ['C++', 'C', 'Embedded Systems', 'Project Mgmt', 'Satellite Communication', 'Subversion'];
 
 const images = [
-  { alt: 'Rockwell Collins Arc-210', src: '/static/img/portfolio/rc/arc-210.png', id: 'rc-arc-210' },
-  { alt: 'Rockwell Collins Workspace', src: '/static/img/portfolio/rc/workspace.png', id: 'rc-workspace' },
-  { alt: 'Rockwell Collins Loving Life', src: '/static/img/portfolio/rc/loving-life.png', id: 'rc-loving-life' },
+  { alt: 'Rockwell Collins Arc-210', src: '/img/portfolio/rc/arc-210.png', id: 'rc-arc-210' },
+  { alt: 'Rockwell Collins Workspace', src: '/img/portfolio/rc/workspace.png', id: 'rc-workspace' },
+  { alt: 'Rockwell Collins Loving Life', src: '/img/portfolio/rc/loving-life.png', id: 'rc-loving-life' },
 ];
 
 const RockwellCollins = ({ isFirst, isLast }) => (

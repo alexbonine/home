@@ -32,6 +32,7 @@ const PanelContainer = styled.div(
   {
     minHeight: '100vh',
     position: 'relative',
+    display: 'flex',
   },
   ({ backgroundColor, ...rest }) => ({
     background: backgroundColor,

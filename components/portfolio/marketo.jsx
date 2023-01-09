@@ -9,20 +9,20 @@ const skills = ['React', 'Redux', 'JavaScript', 'ES6', 'HTML', 'CSS', 'Project M
 const images = [
   {
     alt: 'Toutapp Command Center Search',
-    src: '/static/img/portfolio/tout/command-center-search.png',
+    src: '/img/portfolio/tout/command-center-search.png',
     id: 'command-center-search',
   },
   {
     alt: 'Toutapp Campaigns Setup',
-    src: '/static/img/portfolio/tout/campaign-setup-narrow.png',
+    src: '/img/portfolio/tout/campaign-setup-narrow.png',
     id: 'campaign-setup-narrow',
   },
   {
     alt: 'ToutApp Campaigns Add People',
-    src: '/static/img/portfolio/tout/campaign-tasks-add-people.png',
+    src: '/img/portfolio/tout/campaign-tasks-add-people.png',
     id: 'campaigns-add-people',
   },
-  // { alt: 'Marketo ', src: '/static/img/portfolio/tout/.png', id: 'marketo-' },
+  // { alt: 'Marketo ', src: '/img/portfolio/tout/.png', id: 'marketo-' },
 ];
 
 const Marketo = ({ isFirst, isLast }) => (

@@ -7,29 +7,37 @@ import { PortfolioChildLi, PortfolioChildUl } from './common';
 const skills = ['JavaScript', 'C#.NET', 'PhoneGap', 'AngularJS', 'BackboneJS', 'jQuery', 'Android', 'iOS', 'Ionic'];
 
 const images = [
-  { alt: 'Coyote Go Login', src: '/static/img/portfolio/coyote/go-login-graphic.png', id: 'coyote-go-login' },
-  { alt: 'Coyote Go Load', src: '/static/img/portfolio/coyote/go-load-graphic.png', id: 'coyote-go-load' },
+  { alt: 'Coyote Go Login', src: '/img/portfolio/coyote/go-login-graphic.png', id: 'coyote-go-login' },
+  { alt: 'Coyote Go Load', src: '/img/portfolio/coyote/go-load-graphic.png', id: 'coyote-go-load' },
   {
     alt: 'Coyote Go Documents',
-    src: '/static/img/portfolio/coyote/go-documents-graphic.png',
+    src: '/img/portfolio/coyote/go-documents-graphic.png',
     id: 'coyote-go-documents',
   },
   {
     alt: 'Coyote BazMo Customer',
-    src: '/static/img/portfolio/coyote/bazmo-customer-graphic.png',
+    src: '/img/portfolio/coyote/bazmo-customer-graphic.png',
     id: 'coyote-bazmo-customer',
   },
   {
     alt: 'Coyote BazMo Employee',
-    src: '/static/img/portfolio/coyote/bazmo-employee-graphic.png',
+    src: '/img/portfolio/coyote/bazmo-employee-graphic.png',
     id: 'coyote-bazmo-employee',
   },
-  { alt: 'Coyote BazMo Load', src: '/static/img/portfolio/coyote/bazmo-load-graphic.png', id: 'coyote-bazmo-load' },
-  { alt: 'Coyote Web Login', src: '/static/img/portfolio/coyote/web-login.png', id: 'coyote-web-login' },
-  { alt: 'Coyote Web Accounting', src: '/static/img/portfolio/coyote/web-accounting.png', id: 'coyote-web-accounting' },
+  {
+    alt: 'Coyote BazMo Load',
+    src: '/img/portfolio/coyote/bazmo-load-graphic.png',
+    id: 'coyote-bazmo-load',
+  },
+  { alt: 'Coyote Web Login', src: '/img/portfolio/coyote/web-login.png', id: 'coyote-web-login' },
+  {
+    alt: 'Coyote Web Accounting',
+    src: '/img/portfolio/coyote/web-accounting.png',
+    id: 'coyote-web-accounting',
+  },
   {
     alt: 'Coyote Web Recommended Loads',
-    src: '/static/img/portfolio/coyote/web-recommended-loads.png',
+    src: '/img/portfolio/coyote/web-recommended-loads.png',
     id: 'coyote-recommended-loads',
   },
 ];

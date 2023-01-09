@@ -117,7 +117,7 @@ const ContactLinks = ({ subtitle, title }) => (
       <br />
       <ContactLink href="mailto:hello@alexbonine.com">hello@alexbonine.com</ContactLink>
       <br />
-      <ContactLink href="static/resume.pdf" target="_blank">
+      <ContactLink href="/resume.pdf" target="_blank">
         r&#233;sum&#233;
       </ContactLink>
       <IconBar>

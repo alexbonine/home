@@ -20,20 +20,36 @@ const skills = [
 ];
 
 const images = [
-  { alt: 'LeapLife Quote Widget', src: '/static/img/portfolio/leap/quote.png', id: 'leaplife-quote-widget' },
-  { alt: 'LeapLife Quote Options', src: '/static/img/portfolio/leap/quote-options.png', id: 'leaplife-quote-options' },
-  { alt: 'LeapLife Blog Index', src: '/static/img/portfolio/leap/blog-index.png', id: 'leaplife-blog-index' },
-  { alt: 'LeapLife Blog Article', src: '/static/img/portfolio/leap/blog-article.png', id: 'leaplife-blog-article' },
-  { alt: 'LeapLife Homepage', src: '/static/img/portfolio/leap/homepage.png', id: 'leaplife-homepage' },
-  { alt: 'LeapLife Homepage Sell', src: '/static/img/portfolio/leap/homepage-sell.png', id: 'leaplife-homepage-sell' },
-  { alt: 'LeapLife Loading', src: '/static/img/portfolio/leap/loading.png', id: 'leaplife-loading' },
-  { alt: 'LeapLife Quote', src: '/static/img/portfolio/leap/quote.png', id: 'leaplife-quote' },
+  { alt: 'LeapLife Quote Widget', src: '/img/portfolio/leap/quote.png', id: 'leaplife-quote-widget' },
+  {
+    alt: 'LeapLife Quote Options',
+    src: '/img/portfolio/leap/quote-options.png',
+    id: 'leaplife-quote-options',
+  },
+  { alt: 'LeapLife Blog Index', src: '/img/portfolio/leap/blog-index.png', id: 'leaplife-blog-index' },
+  {
+    alt: 'LeapLife Blog Article',
+    src: '/img/portfolio/leap/blog-article.png',
+    id: 'leaplife-blog-article',
+  },
+  { alt: 'LeapLife Homepage', src: '/img/portfolio/leap/homepage.png', id: 'leaplife-homepage' },
+  {
+    alt: 'LeapLife Homepage Sell',
+    src: '/img/portfolio/leap/homepage-sell.png',
+    id: 'leaplife-homepage-sell',
+  },
+  { alt: 'LeapLife Loading', src: '/img/portfolio/leap/loading.png', id: 'leaplife-loading' },
+  { alt: 'LeapLife Quote', src: '/img/portfolio/leap/quote.png', id: 'leaplife-quote' },
   {
     alt: 'LeapLife Quote Customize',
-    src: '/static/img/portfolio/leap/quote-customize.png',
+    src: '/img/portfolio/leap/quote-customize.png',
     id: 'leaplife-quote-customize',
   },
-  { alt: 'LeapLife Quote Pricing', src: '/static/img/portfolio/leap/quote-pricing.png', id: 'leaplife-quote-pricing' },
+  {
+    alt: 'LeapLife Quote Pricing',
+    src: '/img/portfolio/leap/quote-pricing.png',
+    id: 'leaplife-quote-pricing',
+  },
 ];
 
 const Leaplife = ({ isFirst, isLast }) => (

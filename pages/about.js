@@ -5,6 +5,7 @@ import Colors from '../styles/colors';
 import App from '../styles/constants/app';
 import { mqDesktop, mqTablet } from '../styles/screenSize';
 import Panel from '../components/layouts/panel';
+import OfficeImg from '../img/alex-bonine-the-office.jpg';
 
 const AboutContainer = styled.div`
   max-width: ${App.maxWidth};
@@ -60,11 +61,7 @@ const About = () => (
       <AboutContainer>
         <div>
           <PictureSubcontainer>
-            <Image
-              className="screen-width-mobile"
-              src="/static/img/alex-bonine-the-office.jpg"
-              alt="Alex at Michael Scott's desk"
-            />
+            <Image className="screen-width-mobile" src={OfficeImg} alt="Alex at Michael Scott's desk" />
           </PictureSubcontainer>
           <Text>
             My path to becoming a Web developer started in high school when my math league coach suggested I take a new

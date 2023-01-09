@@ -21,7 +21,7 @@ export default css`
   @font-face {
     font-family: 'Playfair Display';
     font-display: swap;
-    src: url('/static/fonts/PlayfairDisplay-Regular.ttf');
+    src: url('/fonts/PlayfairDisplay-Regular.ttf');
     font-weight: normal;
     font-style: normal;
   }
@@ -29,7 +29,7 @@ export default css`
   /* @font-face {
     font-family: 'Lato';
     font-display: swap;
-    src: url('/static/fonts/Lato-Regular.ttf');
+    src: url('/fonts/Lato-Regular.ttf');
     font-weight: normal;
     font-style: normal;
   } */
@@ -37,7 +37,7 @@ export default css`
   /* @font-face {
     font-family: 'Oswald';
     font-display: swap;
-    src: url('/static/fonts/Oswald-Regular.ttf');
+    src: url('/fonts/Oswald-Regular.ttf');
     font-weight: normal;
     font-style: normal;
   } */
@@ -45,7 +45,7 @@ export default css`
   @font-face {
     font-family: 'Source Sans Pro';
     font-display: swap;
-    src: url('/static/fonts/SourceSansPro-Regular.ttf');
+    src: url('/fonts/SourceSansPro-Regular.ttf');
     font-weight: normal;
     font-style: normal;
   }
@@ -53,7 +53,7 @@ export default css`
   @font-face {
     font-family: 'Montserrat';
     font-display: swap;
-    src: url('/static/fonts/Montserrat-Regular.ttf');
+    src: url('/fonts/Montserrat-Regular.ttf');
     font-weight: normal;
     font-style: normal;
   } */
