@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { animated, useSpring } from 'react-spring';
 import styled from '@emotion/styled';

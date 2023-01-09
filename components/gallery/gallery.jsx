@@ -1,8 +1,8 @@
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { useTransition, animated } from 'react-spring';
-// import { css } from '@emotion/core';
+// import { css } from '@emotion/react';
 import GalleryItem, { GalleryItemShape, ImageLabel, Item } from './galleryItem';
 import GalleryHeader, { All, GalleryHeaderItemShape } from './galleryHeader';
 import useMeasure from '../../hooks/useMeasure';

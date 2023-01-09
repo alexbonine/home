@@ -19,7 +19,7 @@ export default function useMediaColumns(queryValues = [], defaultValue = MQConst
     window.addEventListener('resize', handler);
 
     return () => window.removeEventListener('resize', handler);
-  }, []);
+  }, [match]);
 
   return value;
 }

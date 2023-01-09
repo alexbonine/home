@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import Button, { ButtonColors, ButtonShape } from './button';
@@ -8,7 +8,15 @@ const RadioButtonsComponent = styled.div`
 `;
 
 const RadioButtons = ({ buttons, defaultColor, disabled, onClick, selected, selectedColor }) => {
-  const callbacks = useMemo(() => buttons.map(({ id }) => () => onClick(id)), [buttons]);
+  const callbacks = useMemo(
+    () =>
+      buttons.map(
+        ({ id }) =>
+          () =>
+            onClick(id)
+      ),
+    [buttons, onClick]
+  );
 
   return (
     <RadioButtonsComponent disabled={disabled}>

@@ -1,7 +1,8 @@
-import React, { useCallback } from 'react';
+/** @jsxImportSource @emotion/react */
+import { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import Colors from '../../styles/colors';
 
 export const ButtonColors = {

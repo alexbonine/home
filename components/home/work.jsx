@@ -1,4 +1,3 @@
-import React from 'react';
 import dynamic from 'next/dynamic';
 import styled from '@emotion/styled';
 import HomepageStyles from '../../styles/components/homepage';

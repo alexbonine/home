@@ -20,7 +20,7 @@ export default function useMeasure(showing = true) {
         ro.disconnect();
       }
     };
-  }, [showing]);
+  }, [showing, ro]);
 
   return [{ ref }, bounds];
 }

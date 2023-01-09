@@ -1,4 +1,3 @@
-import React from 'react';
 import HomePage from '../layouts/home';
 import Welcome from '../components/home/welcome';
 import Skills from '../components/home/skills';

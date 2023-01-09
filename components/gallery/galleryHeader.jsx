@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import GalleryHeaderItem from './galleryHeaderItem';

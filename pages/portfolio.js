@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from '@emotion/styled';
 import HomePage from '../layouts/home';
 import Colors from '../styles/colors';

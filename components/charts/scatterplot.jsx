@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect, useRef } from 'react';
+import { useMemo, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { axisBottom, axisLeft, interpolateRainbow, quantize, scaleLinear, scaleOrdinal, select } from 'd3';
 import styled from '@emotion/styled';

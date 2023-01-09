@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import Colors from '../../styles/colors';
@@ -25,7 +25,7 @@ const Label = styled.h5`
 const GalleryHeaderItem = ({ label, onSelect, value, selected }) => {
   const onClick = useCallback(() => {
     onSelect(value);
-  }, []);
+  }, [value, onSelect]);
 
   return (
     <Item onClick={onClick}>

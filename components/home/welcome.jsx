@@ -1,6 +1,6 @@
-import React from 'react';
+/** @jsxImportSource @emotion/react */
 import styled from '@emotion/styled';
-import { css, keyframes } from '@emotion/core';
+import { css, keyframes } from '@emotion/react';
 import Colors from '../../styles/colors';
 import App from '../../styles/constants/app';
 import { GlitchConstants } from '../../styles/constants/animations';

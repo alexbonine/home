@@ -1,7 +1,8 @@
-import React, { useCallback, useEffect, useState } from 'react';
+/** @jsxImportSource @emotion/react */
+import { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import Colors from '../../styles/colors';
 
 export const ButtonColors = {
@@ -128,24 +129,27 @@ const Button = ({ children, className, clickDelay, color, disabled, id, minWidth
       clearTimeout(delayTimeout);
     }
   });
-  const callback = useCallback((e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (disabled || (clickDelay && delayTimeout)) {
-      return;
-    }
+  const callback = useCallback(
+    (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (disabled || (clickDelay && delayTimeout)) {
+        return;
+      }
 
-    if (clickDelay) {
-      setDelayTimeout(
-        setTimeout(() => {
-          setDelayTimeout(null);
-          onClick(id);
-        }, ClickDelayTime)
-      );
-    } else {
-      onClick(id);
-    }
-  });
+      if (clickDelay) {
+        setDelayTimeout(
+          setTimeout(() => {
+            setDelayTimeout(null);
+            onClick(id);
+          }, ClickDelayTime)
+        );
+      } else {
+        onClick(id);
+      }
+    },
+    [disabled, clickDelay, delayTimeout, setDelayTimeout, onClick]
+  );
 
   return (
     <ButtonComponent

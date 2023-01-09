@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from '@emotion/styled';
 import HomepageStyles from '../../styles/components/homepage';
 import App from '../../styles/constants/app';

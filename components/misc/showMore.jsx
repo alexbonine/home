@@ -1,7 +1,8 @@
-import React, { useCallback, useState } from 'react';
+/** @jsxImportSource @emotion/react */
+import { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import Collapse from './collapse';
 import App from '../../styles/constants/app';
 import TextButton from '../buttons/text';
@@ -14,7 +15,7 @@ const ShowMore = ({ children, id, textClosed, textOpened }) => {
   const [isOpen, setOpen] = useState(false);
   const onClick = useCallback(() => {
     setOpen(!isOpen);
-  });
+  }, [setOpen, isOpen]);
 
   return (
     <ShowMoreContainer>

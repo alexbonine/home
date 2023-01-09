@@ -6,18 +6,14 @@ module.exports = {
     es6: true,
     jest: true,
   },
-  parser: 'babel-eslint',
-  parserOptions: {
-    ecmaVersion: 10,
-  },
-  extends: [
-    // 'eslint:recommended',
-    'airbnb',
-    // 'plugin:prettier/recommended',
-    'prettier',
-  ],
-  plugins: ['prettier'],
+  // parser: 'babel-eslint',
+  // parserOptions: {
+  //   ecmaVersion: 10,
+  // },
+  extends: ['next', 'prettier'],
+  plugins: ['prettier', '@emotion'],
   rules: {
+    '@emotion/jsx-import': 'error',
     'prettier/prettier': ['error'],
     'brace-style': ['warn', '1tbs'],
     curly: ['warn', 'all'],
@@ -62,7 +58,7 @@ module.exports = {
     strict: 'off', // airbnb - temp off b/c constant files using module.exports from backend
     'react/jsx-filename-extension': 'off',
     'react/jsx-one-expression-per-line': 'off',
-    //temp off
+    // temp off
     // 'no-unneeded-ternary': 'off',
     // 'no-mixed-operators': 'off',
     // 'object-curly-newline': 'off',
@@ -92,6 +88,8 @@ module.exports = {
     // 'no-nested-ternary': 'off',
     // 'no-unused-expressions': 'off',
     // 'prettier/prettier': ['warn', { singleQuote: true, trailingComma: 'es5', arrowParens: 'always' }],
+    'import/no-anonymous-default-export': [2, { allowObject: true }],
+    '@emotion/jsx-import': 'off',
   },
   globals: {
     React: true,

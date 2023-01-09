@@ -1,4 +1,4 @@
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import emotionReset from 'emotion-reset';
 import Colors from './colors';
 import { mqMobile } from './screenSize';
@@ -49,7 +49,7 @@ export default css`
     font-weight: normal;
     font-style: normal;
   }
-  /* 
+  /*
   @font-face {
     font-family: 'Montserrat';
     font-display: swap;

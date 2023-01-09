@@ -18,6 +18,11 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 const rootUrl = dev ? `http://localhost:${port}` : 'https://alexbonine.herokuapp.com'; // todo update when released to alexbonine.com
 
+// Might be needed for next 12+
+// app.all('/_next/webpack-hmr', (req, res) => {
+//   nextjsRequestHandler(req, res)
+// })
+
 app.prepare().then(() => {
   const server = express();
   server.use(cookieParser());

@@ -1,4 +1,5 @@
-import React, { useCallback, useMemo, useState } from 'react';
+/** @jsxImportSource @emotion/react */
+import { useCallback, useMemo, useState } from 'react';
 import styled from '@emotion/styled';
 import { useTransition, animated } from 'react-spring';
 import Panel from '../layouts/panel';

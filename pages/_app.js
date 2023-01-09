@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import App, { Container } from 'next/app';
-import { Global } from '@emotion/core';
+import App from 'next/app';
+import { Global } from '@emotion/react';
 // import styled from '@emotion/styled';
 // import { CSSTransition, Transition, TransitionGroup } from 'react-transition-group';
 import { PageTransition } from 'next-page-transitions';
@@ -110,7 +110,7 @@ class CustomApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      <Container>
+      <>
         <Meta {...Component.meta} />
         <Global styles={GlobalStyles} />
         <PageTransition timeout={300} classNames="page-transition">
@@ -200,7 +200,7 @@ class CustomApp extends App {
             </div>
           )}
         </Transition> */}
-      </Container>
+      </>
     );
   }
 }

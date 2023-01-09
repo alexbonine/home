@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { useTransition, animated } from 'react-spring';
@@ -110,15 +110,15 @@ const Carousel = ({ height, images, sizeSuffix, width }) => {
     setShownIndex(shownIndex + 1);
   });
 
-  if (images.length === 0) {
-    return null;
-  }
-
   const transitions = useTransition(shownIndex, (p) => p, {
     from: { opacity: 1, transform: 'translate3d(100%,0,0)' },
     enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
     leave: { opacity: 0.5, transform: 'translate3d(-50%,0,0)' },
   });
+
+  if (images.length === 0) {
+    return null;
+  }
 
   return (
     <Container height={height} width={width}>

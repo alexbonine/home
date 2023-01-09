@@ -1,5 +1,5 @@
-import React from 'react';
 import styled from '@emotion/styled';
+import Image from 'next/image';
 import HomePage from '../layouts/home';
 import Colors from '../styles/colors';
 import App from '../styles/constants/app';
@@ -60,7 +60,7 @@ const About = () => (
       <AboutContainer>
         <div>
           <PictureSubcontainer>
-            <img
+            <Image
               className="screen-width-mobile"
               src="/static/img/alex-bonine-the-office.jpg"
               alt="Alex at Michael Scott's desk"

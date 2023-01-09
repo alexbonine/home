@@ -1,4 +1,4 @@
-import React from 'react';
+/** @jsxImportSource @emotion/react */
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import Colors from '../../styles/colors';

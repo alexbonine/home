@@ -1,7 +1,7 @@
-import React from 'react';
-import Link from 'next/link';
+/** @jsxImportSource @emotion/react */
+import LinkComponent from 'next/link';
 import { useRouter } from 'next/router';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import App from '../../styles/constants/app';
 import { mqTablet } from '../../styles/screenSize';
@@ -29,7 +29,7 @@ const NavList = styled.ul`
   }
 `;
 
-const ATag = styled.a`
+const Link = styled(LinkComponent)`
   font-family: ${App.fonts.playfair};
   letter-spacing: 0.5px;
   font-size: 20px;
@@ -73,25 +73,25 @@ const Header = () => {
       <NavContainer>
         <NavList>
           <li>
-            <Link href="/">
-              <ATag css={{ marginLeft: 0 }}>AB</ATag>
+            <Link href="/" css={{ marginLeft: 0 }}>
+              AB
             </Link>
           </li>
         </NavList>
         <NavList right>
           <li>
-            <Link href="/portfolio">
-              <ATag css={router.pathname === '/portfolio' ? Selected : ''}>Portfolio</ATag>
+            <Link href="/portfolio" css={router.pathname === '/portfolio' ? Selected : ''}>
+              Portfolio
             </Link>
           </li>
           <li>
-            <Link href="/about">
-              <ATag css={router.pathname === '/about' ? Selected : ''}>About</ATag>
+            <Link href="/about" css={router.pathname === '/about' ? Selected : ''}>
+              About
             </Link>
           </li>
           <li>
-            <Link href="/contact">
-              <ATag css={[router.pathname === '/contact' ? Selected : '', { marginRight: 0 }]}>Contact</ATag>
+            <Link href="/contact" css={[router.pathname === '/contact' ? Selected : '', { marginRight: 0 }]}>
+              Contact
             </Link>
           </li>
         </NavList>

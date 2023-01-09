@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { arc, format, hierarchy, interpolateRainbow, partition, quantize, scaleOrdinal } from 'd3';

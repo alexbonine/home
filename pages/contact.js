@@ -1,4 +1,3 @@
-import React from 'react';
 import HomePage from '../layouts/home';
 import ContactLinks from '../components/contact/contactLinks';
 import Panel from '../components/layouts/panel';
