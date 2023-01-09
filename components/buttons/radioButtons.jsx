@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import Button, { ButtonColors, ButtonShape } from './button';
+import Button, { ButtonColors, ButtonShape } from '@/components/buttons/button';
 
 const RadioButtonsComponent = styled.div`
   display: flex;

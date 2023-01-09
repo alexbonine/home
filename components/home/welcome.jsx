@@ -1,12 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import styled from '@emotion/styled';
 import { css, keyframes } from '@emotion/react';
-import Colors from '../../styles/colors';
-import App from '../../styles/constants/app';
-import { GlitchConstants } from '../../styles/constants/animations';
+import Colors from '@/styles/colors';
+import App from '@/styles/constants/app';
+import { GlitchConstants } from '@/styles/constants/animations';
 import GlitchImage from './glitchImage';
-import Panel from '../layouts/panel';
-import { mqTablet } from '../../styles/screenSize';
+import Panel from '@/components/layouts/panel';
+import { mqTablet } from '@/styles/screenSize';
 
 const GlitchText = keyframes`
   0% {

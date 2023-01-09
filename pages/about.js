@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
-import HomePage from '../layouts/home';
-import Colors from '../styles/colors';
-import App from '../styles/constants/app';
-import { mqDesktop, mqTablet } from '../styles/screenSize';
-import Panel from '../components/layouts/panel';
-import OfficeImg from '../public/img/alex-bonine-the-office.jpg';
+import HomePage from '@/layouts/home';
+import Colors from '@/styles/colors';
+import App from '@/styles/constants/app';
+import { mqDesktop, mqTablet } from '@/styles/screenSize';
+import Panel from '@/components/layouts/panel';
+import OfficeImg from '@/public/img/alex-bonine-the-office.jpg';
 
 const AboutContainer = styled.div`
   max-width: ${App.maxWidth};

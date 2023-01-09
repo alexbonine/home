@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import Colors from '../../styles/colors';
-import App from '../../styles/constants/app';
-import { mqDesktop } from '../../styles/screenSize';
-import Carousel, { CarouselImageShape } from '../carousel/carousel';
+import Colors from '@/styles/colors';
+import App from '@/styles/constants/app';
+import { mqDesktop } from '@/styles/screenSize';
+import Carousel, { CarouselImageShape } from '@/components/carousel/carousel';
 
 const Container = styled.div`
   display: flex;

@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import Image from 'next/image';
-import HomePage from '../layouts/home';
-import RaccoonImg from '../public/img/raccoon-archnemesis.jpeg';
-import Colors from '../styles/colors';
-import App from '../styles/constants/app';
+import HomePage from '@/layouts/home';
+import RaccoonImg from '@/public/img/raccoon-archnemesis.jpeg';
+import Colors from '@/styles/colors';
+import App from '@/styles/constants/app';
 
 const Container = styled.div`
   position: relative;

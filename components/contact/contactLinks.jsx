@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import Colors from '../../styles/colors';
-import HomepageStyles from '../../styles/components/homepage';
+import Colors from '@/styles/colors';
+import HomepageStyles from '@/styles/components/homepage';
 
 const ContactContainer = styled.div`
   height: 80vh;

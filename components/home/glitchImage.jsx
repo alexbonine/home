@@ -1,6 +1,6 @@
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
-import { GlitchConstants } from '../../styles/constants/animations';
+import { GlitchConstants } from '@/styles/constants/animations';
 
 const GlitchContainer = styled.div`
   position: absolute;

@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import { animated, useSpring } from 'react-spring';
 import styled from '@emotion/styled';
-import useMeasure from '../../hooks/useMeasure';
-import usePrevious from '../../hooks/usePrevious';
-import App from '../../styles/constants/app';
+import useMeasure from '@/hooks/useMeasure';
+import usePrevious from '@/hooks/usePrevious';
+import App from '@/styles/constants/app';
 
 const CollapseContainer = styled(animated.div)`
   overflow: hidden;

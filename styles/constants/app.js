@@ -1,4 +1,4 @@
-import { MQBreakpoints, MQConstants } from '../screenSize';
+import { MQBreakpoints, MQConstants } from '@/styles/screenSize';
 
 const helvetica = "'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif";
 

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { arc, format, hierarchy, interpolateRainbow, partition, quantize, scaleOrdinal } from 'd3';
 import { HierarchyDataShape } from './chartShapes';
-import Colors from '../../styles/colors';
-import App from '../../styles/constants/app';
+import Colors from '@/styles/colors';
+import App from '@/styles/constants/app';
 
 const SunburstSvg = styled.svg`
   max-width: 500px;

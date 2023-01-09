@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import Colors from '../../styles/colors';
+import Colors from '@/styles/colors';
 
 const Image = styled.div`
   background: ${({ image }) => `url(${image}) center center/cover`};

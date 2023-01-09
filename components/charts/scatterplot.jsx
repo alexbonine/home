@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { axisBottom, axisLeft, interpolateRainbow, quantize, scaleLinear, scaleOrdinal, select } from 'd3';
 import styled from '@emotion/styled';
 // import { HierarchyDataShape } from './chartShapes';
-import Colors from '../../styles/colors';
+import Colors from '@/styles/colors';
 
 const margin = {
   top: 20,

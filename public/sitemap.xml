@@ -1,0 +1,26 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://alexbonine.com/404</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://alexbonine.com/500</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://alexbonine.com/about</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://alexbonine.com/contact</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://alexbonine.com</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://alexbonine.com/portfolio</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+</urlset>

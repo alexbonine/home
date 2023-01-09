@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import Collapse from './collapse';
-import App from '../../styles/constants/app';
-import TextButton from '../buttons/text';
+import App from '@/styles/constants/app';
+import TextButton from '@/components/buttons/text';
 
 const ShowMoreContainer = styled.div`
   margin-top: ${App.full};

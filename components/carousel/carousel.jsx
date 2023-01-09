@@ -2,8 +2,8 @@ import { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { useTransition, animated } from 'react-spring';
-import App from '../../styles/constants/app';
-import Colors from '../../styles/colors';
+import App from '@/styles/constants/app';
+import Colors from '@/styles/colors';
 
 const Container = styled.div`
   position: relative;

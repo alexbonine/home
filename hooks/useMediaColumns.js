@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { MQBreakpointsPixels, MQConstants } from '../styles/screenSize';
+import { MQBreakpointsPixels, MQConstants } from '@/styles/screenSize';
 
 const Queries = {
   [MQConstants.mobile]: `(max-width: ${MQBreakpointsPixels.mobileMax})`,

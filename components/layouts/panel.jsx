@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
-import Colors from '../../styles/colors';
-import { mqTablet } from '../../styles/screenSize';
-import App from '../../styles/constants/app';
+import Colors from '@/styles/colors';
+import { mqTablet } from '@/styles/screenSize';
+import App from '@/styles/constants/app';
 
 const getContainerPaddingTop = (screenSize, paddingNavbar) => {
   if (

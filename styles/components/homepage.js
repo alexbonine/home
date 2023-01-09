@@ -1,4 +1,4 @@
-import Colors from '../colors';
+import Colors from '@/styles/colors';
 
 export default {
   backgroundColorAlt: Colors.purple,

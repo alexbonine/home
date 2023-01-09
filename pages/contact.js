@@ -1,6 +1,6 @@
-import HomePage from '../layouts/home';
-import ContactLinks from '../components/contact/contactLinks';
-import Panel from '../components/layouts/panel';
+import HomePage from '@/layouts/home';
+import ContactLinks from '@/components/contact/contactLinks';
+import Panel from '@/components/layouts/panel';
 
 const Contact = () => (
   <HomePage gutters>

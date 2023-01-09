@@ -1,10 +1,9 @@
 import dynamic from 'next/dynamic';
 import styled from '@emotion/styled';
-import HomepageStyles from '../../styles/components/homepage';
-import Panel from '../layouts/panel';
-// import App from '../../styles/constants/app';
+import HomepageStyles from '@/styles/components/homepage';
+import Panel from '@/components/layouts/panel';
 
-const Gallery = dynamic(() => import('../gallery/gallery'), { ssr: false });
+const Gallery = dynamic(() => import('@/components/gallery/gallery'), { ssr: false });
 
 const WorkContainer = styled.div`
   display: flex;

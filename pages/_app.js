@@ -6,8 +6,8 @@ import { Global } from '@emotion/react';
 // import { CSSTransition, Transition, TransitionGroup } from 'react-transition-group';
 import { PageTransition } from 'next-page-transitions';
 // import { Transition } from 'react-spring/renderprops.cjs';
-import Meta from '../components/layouts/meta';
-import GlobalStyles from '../styles/global';
+import Meta from '@/components/layouts/meta';
+import GlobalStyles from '@/styles/global';
 
 // const defaultStyles = {
 //   transition: 'opacity 3000ms ease-in-out',

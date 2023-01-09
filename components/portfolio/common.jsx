@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import Colors from '../../styles/colors';
-import App from '../../styles/constants/app';
+import Colors from '@/styles/colors';
+import App from '@/styles/constants/app';
 
 export const PortfolioChildUl = styled.ul`
   list-style: circle inside;

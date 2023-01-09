@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import HomePage from '../layouts/home';
+import HomePage from '@/layouts/home.jsx';
 
 const Container = styled.div`
   position: relative;

@@ -6,10 +6,6 @@ module.exports = {
     es6: true,
     jest: true,
   },
-  // parser: 'babel-eslint',
-  // parserOptions: {
-  //   ecmaVersion: 10,
-  // },
   extends: ['next', 'prettier'],
   plugins: ['prettier', '@emotion'],
   rules: {

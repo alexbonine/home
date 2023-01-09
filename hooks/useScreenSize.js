@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { MQBreakpoints, MQConstants } from '../styles/screenSize';
+import { MQBreakpoints, MQConstants } from '@/styles/screenSize';
 
 const getScreenSize = (width) => {
   if (width <= MQBreakpoints.mobileMax) {

@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import Colors from '../../styles/colors';
+import Colors from '@/styles/colors';
 
 const Item = styled.div`
   display: inline-block;

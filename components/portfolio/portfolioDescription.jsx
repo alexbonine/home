@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import Colors from '../../styles/colors';
-import App from '../../styles/constants/app';
-import ShowMore from '../misc/showMore';
-import { mqDesktop } from '../../styles/screenSize';
+import Colors from '@/styles/colors';
+import App from '@/styles/constants/app';
+import ShowMore from '@/components/misc/showMore';
+import { mqDesktop } from '@/styles/screenSize';
 
 const Container = styled.div`
   padding-top: ${App.full};

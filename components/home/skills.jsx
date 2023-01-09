@@ -2,18 +2,18 @@
 import { useCallback, useMemo, useState } from 'react';
 import styled from '@emotion/styled';
 import { useTransition, animated } from 'react-spring';
-import Panel from '../layouts/panel';
-import RadioButtons from '../buttons/radioButtons';
-import Sunburst from '../charts/sunburst';
-import Line from '../charts/line';
-import Scatterplot from '../charts/scatterplot';
-import data from '../../utils/skillsData.json';
-import interestsData from '../../utils/interestsData.json';
-import App from '../../styles/constants/app';
-import { flexColumn, flexFull, flexShrinkNone, fullWidth } from '../../styles/flex';
-import { MQBreakpoints, mqDesktop, mqTablet } from '../../styles/screenSize';
-import useMeasure from '../../hooks/useMeasure';
-import Colors from '../../styles/colors';
+import Panel from '@/components/layouts/panel';
+import RadioButtons from '@/components/buttons/radioButtons';
+import Sunburst from '@/components/charts/sunburst';
+import Line from '@/components/charts/line';
+import Scatterplot from '@/components/charts/scatterplot';
+import data from '@/utils/skillsData.json';
+import interestsData from '@/utils/interestsData.json';
+import App from '@/styles/constants/app';
+import { flexColumn, flexFull, flexShrinkNone, fullWidth } from '@/styles/flex';
+import { MQBreakpoints, mqDesktop, mqTablet } from '@/styles/screenSize';
+import useMeasure from '@/hooks/useMeasure';
+import Colors from '@/styles/colors';
 
 const SkillsButtonsIds = {
   interests: 'interests-radio',

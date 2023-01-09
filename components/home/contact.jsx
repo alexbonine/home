@@ -1,5 +1,5 @@
-import ContactLinks from '../contact/contactLinks';
-import Panel from '../layouts/panel';
+import ContactLinks from '@/components/contact/contactLinks';
+import Panel from '@/components/layouts/panel';
 
 const Contact = () => {
   return (

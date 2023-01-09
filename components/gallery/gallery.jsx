@@ -5,10 +5,10 @@ import { useTransition, animated } from 'react-spring';
 // import { css } from '@emotion/react';
 import GalleryItem, { GalleryItemShape, ImageLabel, Item } from './galleryItem';
 import GalleryHeader, { All, GalleryHeaderItemShape } from './galleryHeader';
-import useMeasure from '../../hooks/useMeasure';
-import useMediaColumns from '../../hooks/useMediaColumns';
-import App from '../../styles/constants/app';
-import Colors from '../../styles/colors';
+import useMeasure from '@/hooks/useMeasure';
+import useMediaColumns from '@/hooks/useMediaColumns';
+import App from '@/styles/constants/app';
+import Colors from '@/styles/colors';
 
 const ItemWidth = 400;
 

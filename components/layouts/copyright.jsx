@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import HomepageStyles from '../../styles/components/homepage';
-import App from '../../styles/constants/app';
+import HomepageStyles from '@/styles/components/homepage';
+import App from '@/styles/constants/app';
 
 const CopyrightContainer = styled.div`
   position: absolute;

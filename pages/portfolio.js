@@ -1,15 +1,15 @@
 import styled from '@emotion/styled';
-import HomePage from '../layouts/home';
-import Colors from '../styles/colors';
-import App from '../styles/constants/app';
-import { mqTablet } from '../styles/screenSize';
-import Leaplife from '../components/portfolio/leaplife';
-import Marketo from '../components/portfolio/marketo';
-import Toutapp from '../components/portfolio/toutapp';
-import Coyote from '../components/portfolio/coyote';
-import RockwellCollins from '../components/portfolio/rockwellCollins';
-// import Isu from '../components/portfolio/isu';
-// import Vt from '../components/portfolio/vt';
+import HomePage from '@/layouts/home';
+import Colors from '@/styles/colors';
+import App from '@/styles/constants/app';
+import { mqTablet } from '@/styles/screenSize';
+import Leaplife from '@/components/portfolio/leaplife';
+import Marketo from '@/components/portfolio/marketo';
+import Toutapp from '@/components/portfolio/toutapp';
+import Coyote from '@/components/portfolio/coyote';
+import RockwellCollins from '@/components/portfolio/rockwellCollins';
+// import Isu from '@/components/portfolio/isu';
+// import Vt from '@/components/portfolio/vt';
 
 const PortfolioContainer = styled.div`
   max-width: ${App.maxWidth};

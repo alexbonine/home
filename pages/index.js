@@ -1,8 +1,8 @@
-import HomePage from '../layouts/home';
-import Welcome from '../components/home/welcome';
-import Skills from '../components/home/skills';
-import Work from '../components/home/work';
-import Contact from '../components/home/contact';
+import HomePage from '@/layouts/home';
+import Welcome from '@/components/home/welcome';
+import Skills from '@/components/home/skills';
+import Work from '@/components/home/work';
+import Contact from '@/components/home/contact';
 
 const Index = () => (
   <HomePage>

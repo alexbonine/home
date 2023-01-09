@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import Colors from '../../styles/colors';
+import Colors from '@/styles/colors';
 
 export const ButtonColors = {
   green: 'green',

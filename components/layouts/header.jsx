@@ -3,8 +3,8 @@ import LinkComponent from 'next/link';
 import { useRouter } from 'next/router';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import App from '../../styles/constants/app';
-import { mqTablet } from '../../styles/screenSize';
+import App from '@/styles/constants/app';
+import { mqTablet } from '@/styles/screenSize';
 
 const HeaderElement = styled.header`
   width: 100%;

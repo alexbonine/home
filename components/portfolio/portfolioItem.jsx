@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import Colors from '../../styles/colors';
-import { mqTablet } from '../../styles/screenSize';
-import App from '../../styles/constants/app';
+import Colors from '@/styles/colors';
+import { mqTablet } from '@/styles/screenSize';
+import App from '@/styles/constants/app';
 
 const Container = styled.li`
   display: flex;
