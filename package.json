@@ -4,7 +4,7 @@
   "description": "Personal website alexbonine.com",
   "main": "index.js",
   "engines": {
-    "node": "18.x"
+    "node": "22.x"
   },
   "scripts": {
     "dev": "next",
